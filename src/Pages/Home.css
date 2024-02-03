@@ -1,0 +1,33 @@
+/* Home.css */
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 5000px; /* Increase the max-width to your desired length */
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .hospitalImage {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .text-content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .text-content h2 {
+    color: #333;
+  }
+  
+  .text-content p {
+    color: #555;
+  }
+  
+  /* Header and Footer styles (assuming you have separate CSS files for them) */
+  
