@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import React, { } from "react";
+import { BrowserRouter, Route, Routes, } from "react-router-dom";
 import './App.css';
-
 
 import Home from "./Pages/Home";
 import Lab from "./Pages/Lab";
@@ -12,10 +11,10 @@ import About from "./Pages/About";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Slideshow from "./components/Slideshow";
 
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
-
 
 function App() {
   // Assuming you have authContext imported or defined somewhere in your code
@@ -59,6 +58,9 @@ function App() {
 
           {/* Header Route */}
           <Route path="/Header" element={<Header />} />
+
+          {/* Slideshow Route */}
+          <Route path="/Slideshow" element={<Slideshow />} /> 
         </Routes>
       </BrowserRouter>
     </div>
