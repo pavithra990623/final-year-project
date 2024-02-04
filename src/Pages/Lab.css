@@ -1,4 +1,4 @@
-/* Lab.css */
+/*Lab.css*/
 
 .lab-container {
     margin-top: 50px;
@@ -38,7 +38,7 @@
   }
   
   .lab-container form button {
-    background-color: #f4d90d;
+    background-color: #030366;
     color: #fff;
     padding: 10px 150px;
     border: none;
@@ -46,7 +46,7 @@
   }
   
   .lab-container form button:hover {
-    background-color: #da800b;
+    background-color: #0471a7;
   }
   
 
@@ -101,3 +101,6 @@
   .lab-container .lab-table td button2.delete:hover {
     background-color: #23c836;
   }
+  
+
+

@@ -27,7 +27,7 @@
   }
   
   button {
-    background-color: #423f1f;
+    background-color: #030366;
     color: #fff;
     padding: 10px 180px;
     border: none;
@@ -35,7 +35,7 @@
   }
   
   button:hover {
-    background-color: #adb20f;
+    background-color: #0471a7;
   }
   
   /* Header and Footer styles (assuming you have separate CSS files for them) */

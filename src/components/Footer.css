@@ -1,13 +1,13 @@
 /* Footer.css */
 
 .Footer {
-    background-color: #333;
+    background-color: #20A0D8;
     color: #fff;
     padding: 30px 0;
   }
   
   .Footer h3 {
-    color: #ffd700; /* Yellow color for the heading */
+    color: #10174e; /* Yellow color for the heading */
   }
   
   .footer-icons i {
@@ -16,7 +16,7 @@
   }
   
   .footer-icons i:hover {
-    color: #ffd700; /* Yellow color on hover */
+    color: #2775e9; /* Yellow color on hover */
   }
   
   .ft-2 ul {
@@ -29,7 +29,7 @@
   }
   
   .Last-footer {
-    background-color: #222;
+    background-color: #030366;
     color: #fff;
     text-align: center;
     padding: 10px 0;
