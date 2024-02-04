@@ -1,17 +1,17 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import hospitalImage from '../asserts/hospitalImage.png';
+
 import './Home.css';
 
 export default function Home() {
   return (
     <div>
     <Header/>
+    <br></br>
       <h1>Home</h1>
-      <div className="image-container">
-          <img src={hospitalImage} alt="Hospital" className="hospitalImage" />
-        </div>
+      
+
         
       <div className="text-content">
           <h2>Welcome to ABC Hospital Management System</h2>

@@ -1,0 +1,11 @@
+.image-container {
+    display: flex;
+    justify-content: space-around; /* Adjust as per your layout preference */
+    align-items: center; /* Adjust as per your layout preference */
+  }
+  
+  .hospitalImage {
+    width: 500px; /* Adjust width as per your requirement */
+    height: 300px; /* Maintain aspect ratio */
+  }
+    
