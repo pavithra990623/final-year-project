@@ -76,8 +76,8 @@ const Lab = () => {
                 <td>{report.reportType}</td>
                 <td>{report.date}</td>
                 <td>
-                  <button onClick={() => handleUpdateReport(report.id)}>Update</button>
-                  <button onClick={() => handleDeleteReport(report.id)}>Delete</button>
+                  <button1 onClick={() => handleUpdateReport(report.id)}>Update</button1>
+                  <button2 onClick={() => handleDeleteReport(report.id)}>Delete</button2>
                 </td>
               </tr>
             ))}
