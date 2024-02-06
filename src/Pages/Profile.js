@@ -10,7 +10,7 @@ export default function Profile() {
   return (
     <div>
     <Header/>
-      <h1>Profile</h1>
+      <h1>The Profile</h1>
     <Footer/>
     </div>
   )
