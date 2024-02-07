@@ -25,10 +25,10 @@ function Slideshow() {
         <img src="slideim2.avif" alt="Slide 2"      style={{width: '100%'}} />
       </div>
       <div className="mySlides fade"                style={{display: slideIndex === 2 ? 'block' : 'none'}}>
-        <img src="slideim3.webp" alt="Slide 3"      style={{width: '100%'}} />
+        <img src="https://thumbs.dreamstime.com/b/baby-panda-tree-chengdu-research-base-giant-breeding-30774508.jpg" alt="Slide 3"      style={{width: '100%'}} />
       </div>
       <div className="mySlides fade"                style={{display: slideIndex === 3 ? 'block' : 'none'}}>
-        <img src="slideim4.jpg" alt="Slide 4"       style={{width: '100%'}} />
+        <img src="https://t4.ftcdn.net/jpg/05/54/52/13/360_F_554521329_ngmDQSjSrUSRnbK2xK0bkcprsinG9Xdv.jpg" alt="Slide 4"       style={{width: '100%'}} />
       </div>
     </div>
   );
