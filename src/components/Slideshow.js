@@ -19,16 +19,16 @@ function Slideshow() {
   return (
     <div className="slideshow-container">
       <div className="mySlides fade"                style={{display: slideIndex === 0 ? 'block' : 'none'}}>
-        <img src="slideim1.jpg" alt="Slide 1"       style={{width: '100%'}} />
+        <img src="https://www.webalive.com.au/wp-content/uploads/2018/05/best-healthcare-website-design-feature-image.jpg" alt="Slide 1"       style={{width: '100%'}} />
       </div>
       <div className="mySlides fade"                style={{display: slideIndex === 1 ? 'block' : 'none'}}>
-        <img src="slideim2.avif" alt="Slide 2"      style={{width: '100%'}} />
+        <img src="https://www.shutterstock.com/image-photo/laptop-keyboard-stethoscope-on-blue-260nw-1907543080.jpg" alt="Slide 2"      style={{width: '100%'}} />
       </div>
       <div className="mySlides fade"                style={{display: slideIndex === 2 ? 'block' : 'none'}}>
-        <img src="https://thumbs.dreamstime.com/b/baby-panda-tree-chengdu-research-base-giant-breeding-30774508.jpg" alt="Slide 3"      style={{width: '100%'}} />
+        <img src="https://morweb.org/get/files/image/galleries/medical-website-design_feature_image.jpg?resize=1000x0&crop=1000x542" alt="Slide 3"      style={{width: '100%'}} />
       </div>
       <div className="mySlides fade"                style={{display: slideIndex === 3 ? 'block' : 'none'}}>
-        <img src="https://t4.ftcdn.net/jpg/05/54/52/13/360_F_554521329_ngmDQSjSrUSRnbK2xK0bkcprsinG9Xdv.jpg" alt="Slide 4"       style={{width: '100%'}} />
+        <img src="https://media.istockphoto.com/id/1296726355/photo/successful-journey-through-medical-school.jpg?s=612x612&w=0&k=20&c=EwUGyZCE71pIzz8rknVQF9fKnkpO16UDtaAfpIuJZOg=" alt="Slide 4"       style={{width: '100%'}} />
       </div>
     </div>
   );
