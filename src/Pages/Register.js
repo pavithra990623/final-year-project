@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { imagedb } from '../firebase.Config';
-import { v4 as uuidv4 } from 'uuid'; // Import statement for v4
-import './Register.css'
-import { ref, uploadBytes } from 'firebase/storage'; // Import ref and uploadBytes
+import { db, imagedb } from '../firebase.Config'; // Correct import
+import { v4 as uuidv4 } from 'uuid';
+import { ref, uploadBytes } from 'firebase/storage';
+import { getDocs, addDoc, collection, where, query } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +17,28 @@ const Register = () => {
   const [address, setAddress] = useState('');
   const [contactNumber, setContactNumber] = useState('');
   const [allergies, setAllergies] = useState('');
-  const [img, setImg] = useState(null); // Initialize img state to null
+  const [img, setImg] = useState(null);
+  const [metch, setMetch] = useState([]);
+  const dbref = collection(db, "Auth");
+
+  const handleRegister = async () => {
+    const matchEmail = query(dbref, where('Email', '==', email));
+
+    try {
+      const snapshot = await getDocs(matchEmail);
+      const emailMatchingArray = snapshot.docs;
+      if (emailMatchingArray.length > 0) {
+        alert("This Email Address Already Existed");
+      } else {
+        await addDoc(dbref, { Email: email, Username: username, Password: password, Age: age, Dob: dob, Gender: gender, Address: address, ContactNumber: contactNumber, Allergies: allergies });
+        alert('Signup Successful');
+      }
+    } catch (error) {
+      alert(error);
+    }
+  };
+  
+
 
   // Function to handle image upload
   const handleClick = () => {
@@ -90,7 +112,7 @@ const Register = () => {
           <input type="text" value={allergies} onChange={(e) => setAllergies(e.target.value)} />
         </label>
         <br />
-
+        <button type="button" onClick={handleRegister}>Register</button>
           </form>
 
           
