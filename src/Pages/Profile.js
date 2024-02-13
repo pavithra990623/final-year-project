@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import BarChart from '../Charts/BarChart';
 
 import './Profile.css';
 
@@ -11,6 +12,7 @@ export default function Profile() {
     <div>
     <Header/>
       <h1>The Profile</h1>
+      <BarChart/>
     <Footer/>
     </div>
   )
