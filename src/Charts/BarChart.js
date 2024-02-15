@@ -17,6 +17,7 @@ const BarChart = () => {
             borderWidth: 1
         }]
     };
+
     var Options = {
         maintainAspectRatio: false,
         scales: {
@@ -26,13 +27,13 @@ const BarChart = () => {
         },
         legend: {
             labels: {
-                fontSize: 26
+                fontSize: 16 // Adjust the legend font size
             }
         }
     };
 
     return (
-        <div>
+        <div style={{ width: '300px', height: '200px' }}> {/* Apply CSS to the container div */}
             <Bar
                 data={data}
                 height={400}
