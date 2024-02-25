@@ -22,8 +22,8 @@
 // };
 
 // AuthContext.js
-import React, { createContext, useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { createContext, useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
     // Your sign-in logic here, this is just a placeholder
     // Authenticate the user using your preferred method (e.g., Firebase Authentication)
     setUser({ email }); // Example: Set user upon successful sign-in
-    history.push('/profile'); // Redirect to profile page after sign-in
+    history.push("/profile"); // Redirect to profile page after sign-in
   };
 
   // Example authentication function for sign-out
@@ -46,14 +46,14 @@ export const AuthProvider = ({ children }) => {
     // Your sign-out logic here, this is just a placeholder
     // Sign out the user using your preferred method (e.g., Firebase Authentication)
     setUser(null); // Clear user upon sign-out
-    history.push('/login'); // Redirect to login page after sign-out
+    history.push("/login"); // Redirect to login page after sign-out
   };
 
   // Value to provide to consuming components
   const value = {
     user,
     signIn,
-    signOut
+    signOut,
     // Add more authentication-related methods or state here as needed
   };
 
