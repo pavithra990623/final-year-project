@@ -1,27 +1,27 @@
 import React, {  useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory to redirect users
+import { useNavigate } from 'react-router-dom'; // Import useNavigate to redirect users
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { db } from '../firebase.Config'; // Correct import
 import { collection, doc, getDoc } from 'firebase/firestore';
-import { useAuth } from '../contexts/AuthContext'; // Import your authentication context
+import { useAuth } from '../context/AuthContext'; // Import your authentication context
 
 const Profile = () => {
-  const history = useHistory(); // Initialize useHistory hook
-  const { currentUser } = useAuth(); // Access the current user from your authentication context
+  const history = useNavigate(); // Initialize useHistory hook
+  const { user } = useAuth(); // Access the current user from your authentication context
   const [userData, setUserData] = useState(null);
   
 
   useEffect(() => {
     const fetchUserData = async () => {
-      if (!currentUser) {
+      if (!user) {
         // If there is no logged-in user, redirect to the login page
         history.push('/login');
         return;
       }
 
       try {
-        const userDocRef = doc(db, 'Auth', currentUser.uid);
+        const userDocRef = doc(db, 'Auth', user.uid);
         const userDocSnapshot = await getDoc(userDocRef);
         if (userDocSnapshot.exists()) {
           setUserData(userDocSnapshot.data());
@@ -34,7 +34,7 @@ const Profile = () => {
     };
 
     fetchUserData();
-  }, [currentUser, history]);
+  }, [user, history]);
 
 
   return (

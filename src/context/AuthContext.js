@@ -23,7 +23,6 @@
 
 // AuthContext.js
 import React, { createContext, useContext, useState } from "react";
-import { useHistory } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -31,31 +30,6 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); // State to hold the authenticated user
-  const history = useHistory(); // Access to navigation history
-
-  // Example authentication function for sign-in
-  const signIn = (email, password) => {
-    // Your sign-in logic here, this is just a placeholder
-    // Authenticate the user using your preferred method (e.g., Firebase Authentication)
-    setUser({ email }); // Example: Set user upon successful sign-in
-    history.push("/profile"); // Redirect to profile page after sign-in
-  };
-
-  // Example authentication function for sign-out
-  const signOut = () => {
-    // Your sign-out logic here, this is just a placeholder
-    // Sign out the user using your preferred method (e.g., Firebase Authentication)
-    setUser(null); // Clear user upon sign-out
-    history.push("/login"); // Redirect to login page after sign-out
-  };
-
-  // Value to provide to consuming components
-  const value = {
-    user,
-    signIn,
-    signOut,
-    // Add more authentication-related methods or state here as needed
-  };
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  
+  return <AuthContext.Provider value={{user, setUser}}>{children}</AuthContext.Provider>;
 };
