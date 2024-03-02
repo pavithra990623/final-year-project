@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,6 +7,7 @@ import "./Login.css";
 import { database } from "../firebase.Config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 
 function Login() {
@@ -15,11 +16,17 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
+  const {user, setUser} = useAuth();
+  useEffect(() => {
+    if(user) history("/")
+  }, [user])
+
   const handleLogin = (e) => {
     e.preventDefault();
 
     createUserWithEmailAndPassword(database, email, password)
       .then((data) => {
+        setUser(data._tokenResponse);
         console.log(data, "authData");
         // Redirect to '/Home' on successful login
         history("/");

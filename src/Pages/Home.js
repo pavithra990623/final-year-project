@@ -4,8 +4,11 @@ import Footer from '../components/Footer';
 import Slideshow from '../components/Slideshow';
 
 import './Home.css';
+import { useAuth } from '../context/AuthContext';
 
 export default function Home() {
+  const {user} = useAuth();
+  console.log(user)
   return (
     <div>
     <Header/>
