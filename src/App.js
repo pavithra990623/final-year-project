@@ -2,6 +2,8 @@ import React, { } from "react";
 import { BrowserRouter, Route, Routes, } from "react-router-dom";
 import './App.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Home from "./Pages/Home";
 import Lab from "./Pages/Lab";
 import Login from "./Pages/Login";
