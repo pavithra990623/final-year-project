@@ -36,8 +36,7 @@ export default function Home() {
             <div class="content">
               <h3>Why Choose Medilab?</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+              At Medilab, we prioritize your well-being with a patient-centered approach that sets us apart.From our highly skilled physicians and nurses to our dedicated specialists and support staff, everyone at Medilab is focused on providing personalized care tailored to your individual needs. Your health and well-being are our top priorities, and we strive to exceed your expectations every step of the way. Welcome to Medilab, your trusted partner in health.
               </p>
               <div class="text-center">
                 <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
@@ -50,22 +49,22 @@ export default function Home() {
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <h4>Lab Report Management</h4>
+                    <p>Securely store and manage your lab reports online for convenient access whenever you need them</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris ladore pan</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <h4>Doctor-Patient Collaboration</h4>
+                    <p>Collaborate seamlessly with your healthcare provider by sharing medical information and updates securely online</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-images"></i>
-                    <h4>Labore consequatur</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <h4>Join the Revolution</h4>
+                    <p>Join us in revolutionizing healthcare in Sri Lanka by embracing digital solutions for better patient outcomes</p>
                   </div>
                 </div>
               </div>
