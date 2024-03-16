@@ -10,9 +10,9 @@ export default function Home() {
   const {user} = useAuth();
   console.log(user)
   return (
-    <div>
+    <div >
 
-    <Header/>
+    <Header/> 
 
     <br></br>
       <h1>Home</h1>
