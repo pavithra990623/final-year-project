@@ -1,9 +1,12 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-//import Slideshow from '../components/Slideshow';
 
 import './Home.css';
+import backgroundimage1 from '../asserts/imageone.png';
+import backgroundimage2 from '../asserts/slideim1.jpg';
+import backgroundimage3 from '../asserts/slideim4.jpg';
+
 import { useAuth } from '../context/AuthContext';
 
 export default function Home() {
@@ -16,16 +19,6 @@ export default function Home() {
 
     <br></br>
       <h1>Home</h1>
-
-      {/* <Slideshow />
-
-      <div className="text-content">
-          <h2>Welcome to MedRecord KEEPER Hospital Management System</h2>
-          <p>
-            Our system provides a comprehensive solution for managing medical records, appointments,
-            lab reports, and more. Join us and experience the convenience of centralized healthcare information.
-          </p>
-        </div> */}
 
       {/* <!-- ======= Why Us Section ======= --> */}
     <section id="why-us" class="why-us">
@@ -43,30 +36,38 @@ export default function Home() {
               </div>
             </div>
           </div>
+
           <div class="col-lg-8 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
+
                 <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
+                  <div class="icon-box mt-4 mt-xl-0" style={{ backgroundColor: '#D3D3D3' }}>
+                  <img src={backgroundimage3} alt="Join the Revolution" className="icon-img" />
                     <i class="bx bx-receipt"></i>
                     <h4>Lab Report Management</h4>
                     <p>Securely store and manage your lab reports online for convenient access whenever you need them</p>
                   </div>
                 </div>
+
                 <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
+                  <div class="icon-box mt-4 mt-xl-0" style={{ backgroundColor: '#D3D3D3' }}>
+                  <img src={backgroundimage2} alt="Doctor-Patient Collaboration" className="icon-img" />
                     <i class="bx bx-cube-alt"></i>
                     <h4>Doctor-Patient Collaboration</h4>
                     <p>Collaborate seamlessly with your healthcare provider by sharing medical information and updates securely online</p>
                   </div>
                 </div>
+
                 <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
+                  <div class="icon-box mt-4 mt-xl-0" style={{ backgroundColor: '#D3D3D3' }}>
+                  <img src={backgroundimage1} alt="Join the Revolution" className="icon-img" />
                     <i class="bx bx-images"></i>
                     <h4>Join the Revolution</h4>
                     <p>Join us in revolutionizing healthcare in Sri Lanka by embracing digital solutions for better patient outcomes</p>
                   </div>
                 </div>
+
               </div>
              </div> {/*<!-- End .content--> */}
           </div>
