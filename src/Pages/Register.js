@@ -59,60 +59,54 @@ const Register = () => {
           <h2>Registration Form</h2>
           <form>
 
-        <label>
-              Email
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <br />
+          <div className="form-row">
+              <div className="form-col">
+                <label>
+                  <span>Email:</span>
+                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                </label>
+                <label>
+                  <span>Password:</span>
+                  <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                </label>
+                <label>
+                  <span>Username:</span>
+                  <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                </label>
+                <label>
+                  <span>Age:</span>
+                  <input type="text" value={age} onChange={(e) => setAge(e.target.value)} />
+                </label>
+              </div>
+              <div className="form-col">
+                <label>
+                  <span>Date of Birth:</span>
+                  <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
+                </label>
+                <label>
+                  <span>Gender:</span>
+                  <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
+                </label>
+                <label>
+                  <span>Address:</span>
+                    <select value={gender} onChange={(e) => setGender(e.target.value)}>
+                      <option value="">Select Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                </label>
+                <label>
+                  <span>Contact Number:</span>
+                  <input type="text" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} />
+                </label>
+                <label>
+                  <span>Allergies:</span>
+                  <input type="text" value={allergies} onChange={(e) => setAllergies(e.target.value)} />
+                </label>
+              </div>
+            </div>
+            <button type="button" onClick={handleRegister}>Register</button>
 
-        <label>
-              Password
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <br />
-
-        <label>
-          UserName     
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-        </label>
-        <br />
-
-        <label>
-          Age   
-          <input type="text" value={age} onChange={(e) => setAge(e.target.value)} />
-        </label>
-        <br />
-
-        <label>
-          Date of Birth     
-          <input type="text" value={dob} onChange={(e) => setDob(e.target.value)} />
-        </label>
-        <br />
-
-        <label>
-          Gender     
-          <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
-        </label>
-        <br />
-
-        <label>
-          Address     
-          <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
-        </label>
-        <br />
-
-        <label>
-          Contact Number     
-          <input type="text" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} />
-        </label>
-        <br />
-
-        <label>
-          Allergies that you have     
-          <input type="text" value={allergies} onChange={(e) => setAllergies(e.target.value)} />
-        </label>
-        <br />
-        <button type="button" onClick={handleRegister}>Register</button>
           </form>
 
           

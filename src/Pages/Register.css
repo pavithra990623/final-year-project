@@ -25,5 +25,18 @@
     margin-bottom: 15px;
   }
   
+  .form-label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .form-label span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  
+  
   /* Header and Footer styles (assuming you have separate CSS files for them) */
   
