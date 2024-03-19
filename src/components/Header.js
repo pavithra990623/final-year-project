@@ -4,6 +4,7 @@ import './Header.css';
 export default function Header() {
   return (
     <div className='header'>
+  
       <li> <Link to="/">Home</Link></li>
       <li> <Link to="/Login">Login</Link></li>
       <li> <Link to="/Register">Register</Link></li> 

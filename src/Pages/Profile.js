@@ -1,4 +1,4 @@
-import React, {  useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate to redirect users
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -10,7 +10,7 @@ const Profile = () => {
   const history = useNavigate(); // Initialize useHistory hook
   const { user } = useAuth(); // Access the current user from your authentication context
   const [userData, setUserData] = useState(null);
-  
+  const [profiled, setProfiled] = useState(null); // Define profiled state
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -36,6 +36,18 @@ const Profile = () => {
     fetchUserData();
   }, [user, history]);
 
+  // Define handleUpdateprofiled function
+  const handleUpdateprofiled = (id) => {
+    console.log('Update profile for id:', id);
+    // Implement your update logic here
+  };
+
+  // Define handleDeleteprofiled function
+  const handleDeleteprofiled = (id) => {
+    console.log('Delete profile for id:', id);
+    // Implement your delete logic here
+  };
+
 
   return (
     <div>
@@ -44,23 +56,28 @@ const Profile = () => {
         <h2>Profile Page</h2>
         {userData ? (
           <ul>
-          {userData.map((user) => (
-              <li key={user.id}>
-                   <p>Email: {user.Email}</p>
-                   <p>Username: {user.Username}</p>
-                   <p>Age: {user.Age}</p>
-                   <p>Date of Birth: {user.Dob}</p>
-                   <p>Gender: {user.Gender}</p>
-                   <p>Address: {user.Address}</p>
-                   <p>Contact Number: {user.ContactNumber}</p>
-                   <p>Allergies: {user.Allergies}</p>
-              </li>
-          ))}
+            {/* Mapping userData directly as it's an object, not an array */}
+            <li>
+              <p>Email: {userData.Email}</p>
+              <p>Username: {userData.Username}</p>
+              <p>Age: {userData.Age}</p>
+              <p>Date of Birth: {userData.Dob}</p>
+              <p>Gender: {userData.Gender}</p>
+              <p>Address: {userData.Address}</p>
+              <p>Contact Number: {userData.ContactNumber}</p>
+              <p>Allergies: {userData.Allergies}</p>
+            </li>
           </ul>
         ) : (
           <p>Loading user data...</p>
         )}
       </div>
+
+      {/* Edit and update buttons */}
+      <button3 onClick={() => handleUpdateprofiled(profiled?.id)}>Update</button3> 
+      <br></br>
+      <button4 onClick={() => handleDeleteprofiled(profiled?.id)}>Delete</button4>
+
       <Footer />
     </div>
   );
