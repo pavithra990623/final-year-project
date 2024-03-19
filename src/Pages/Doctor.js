@@ -2,12 +2,13 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import "./Doctor.css";
+import 'remixicon/fonts/remixicon.css';
 
 // Importing images
-const doctor1 = require('../assets/img/doctors/doctors-1.jpg');
-const doctor2 = require('../assets/img/doctors/doctors-2.jpg');
-const doctor3 = require('../assets/img/doctors/doctors-3.jpg');
-const doctor4 = require('../assets/img/doctors/doctors-4.jpg');
+const doctor1 = require('../asserts/img/doctors/doctors-1.jpg');
+const doctor2 = require('../assetrs/img/doctors/doctors-2.jpg');
+const doctor3 = require('../assetrs/img/doctors/doctors-3.jpg');
+const doctor4 = require('../assetrs/img/doctors/doctors-4.jpg');
 
 
 
