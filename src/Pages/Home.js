@@ -19,6 +19,11 @@ export default function Home() {
 
     <br></br>
       <h1>Home</h1>
+      {/* <!-- ======= Why Us Section ======= --> */}
+      <div class="container">
+        <h1>Welcome To MediLab</h1>
+        <p>We are Team of Talented medical Specialist that make your health care in a well manner</p>
+      </div>
 
       {/* <!-- ======= Why Us Section ======= --> */}
     <section id="why-us" class="why-us">

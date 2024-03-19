@@ -1,0 +1,35 @@
+button3 {
+    background-color: #d70404;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+button4 {
+    background-color: #0d510b;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+button5 {
+    background-color: #0b064c;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+}
