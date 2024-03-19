@@ -50,7 +50,11 @@
     width: 100%; /* Adjust as needed */
     height: auto; /* Adjust as needed */
   }
-  
+  p1 {
+    color: #125fa7;
+    font-size: 31px;
+    font-weight: 700;
+  }
 
   @media (min-width: 1024px) {
     #hero {

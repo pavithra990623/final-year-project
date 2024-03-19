@@ -1,23 +1,79 @@
 /* Header.css */
 
 .header {
-    background-color: #20A0D8;
-    padding: 15px;
-    text-align: right;
-  }
-  
-  .header li {
-    display: inline;
-    margin-right: 10px;
-  }
-  
-  .header li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  .header li a:hover {
-    color: #080f47; /* Change color on hover */
-  }
-  
+  background-color: #20A0D8;
+  padding: 15px;
+  text-align: right;
+}
+
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.header li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.header li a:hover {
+  color: #080f47; /* Change color on hover */
+}
+
+/* Topbar styles */
+/* #topbar {
+  background: #c1baba;
+  height: 40px;
+  font-size: 14px;
+  transition: all 0.5s;
+  z-index: 996;
+  margin-top: 50px; /* Adjust the margin to position below the header */
+/* }
+
+#topbar .container {
+  padding: 10px;
+}
+
+#topbar .contact-info a {
+  line-height: 1;
+  color: #444444;
+  transition: 0.3s;
+}
+
+#topbar .contact-info a:hover {
+  color: #1977cc;
+}
+
+#topbar .contact-info i {
+  color: #1977cc;
+  padding-right: 4px;
+  margin-left: 15px;
+  line-height: 0;
+}
+
+#topbar .contact-info i:first-child {
+  margin-left: 0;
+}
+
+#topbar .social-links a {
+  color: #437099;
+  padding-left: 15px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+}
+
+#topbar .social-links a:hover {
+  color: #1977cc;
+}
+
+#topbar .social-links a:first-child {
+  border-left: 0;
+} */ 
