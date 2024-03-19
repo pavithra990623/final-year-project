@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import { db } from '../firebase.Config'; // Correct import
 import { collection, doc, getDoc } from 'firebase/firestore';
 import { useAuth } from '../context/AuthContext'; // Import your authentication context
+import "./Profile.css";
 
 const Profile = () => {
   const history = useNavigate(); // Initialize useHistory hook
@@ -75,8 +76,31 @@ const Profile = () => {
 
       {/* Edit and update buttons */}
       <button3 onClick={() => handleUpdateprofiled(profiled?.id)}>Update</button3> 
-      <br></br>
+      <br></br> <br></br>
       <button4 onClick={() => handleDeleteprofiled(profiled?.id)}>Delete</button4>
+      <br></br><br></br>
+
+      <p>Collect Your Test Results Here</p>
+      <br></br>
+      <table>
+        <thead>
+          <tr>
+            <th>Blood Pressure</th>
+            <th>Sugar Level</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* Render table rows for existing readings */}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><input type="text" placeholder="Enter blood pressure" /></td>
+            <td><input type="text" placeholder="Enter sugar level" /></td>
+            <td><button5>Submit</button5></td>
+          </tr>
+        </tfoot>
+      </table>
 
       <Footer />
     </div>
