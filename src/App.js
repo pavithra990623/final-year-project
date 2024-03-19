@@ -15,6 +15,7 @@ import About from "./Pages/About";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Slideshow from "./components/Slideshow";
+import Doctor from "./Pages/Doctor";
 
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
@@ -66,6 +67,10 @@ function App() {
 
           {/* Slideshow Route */}
           <Route path="/Slideshow" element={<Slideshow />} /> 
+
+          {/* Doctor Route */}
+          <Route path="/Doctor" element={<Doctor />} /> 
+
         </Routes>
       </BrowserRouter>
     </div>

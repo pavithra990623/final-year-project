@@ -18,11 +18,11 @@ export default function Home() {
     <Header/> 
 
     <br></br>
-      <h1>Home</h1>
+      {/* <h1>Home</h1> */}
       {/* <!-- ======= Why Us Section ======= --> */}
       <div class="container">
         <h1>Welcome To MediLab</h1>
-        <p>We are Team of Talented medical Specialist that make your health care in a well manner</p>
+        <p1>We are Team of Talented medical Specialist that make your health care in a well manner</p1>
       </div>
 
       {/* <!-- ======= Why Us Section ======= --> */}
