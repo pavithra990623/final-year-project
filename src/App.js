@@ -11,6 +11,7 @@ import Register from "./Pages/Register";
 import Profile from "./Pages/Profile";
 import About from "./Pages/About";
 
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Slideshow from "./components/Slideshow";
@@ -39,6 +40,8 @@ function App() {
              // </RequireAuth>
             }
           />
+
+           
 
           {/* Lab Route */}
           <Route path="/Lab" element={<Lab />} />
