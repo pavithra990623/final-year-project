@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate to redirect users
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { db } from '../firebase.Config'; // Correct import
-import { collection, doc, getDoc } from 'firebase/firestore';
-import { useAuth } from '../context/AuthContext'; // Import your authentication context
+import { db } from '../firebase.Config';
+import { collection, doc, addDoc, getDoc } from 'firebase/firestore'; // Import getDoc
+import { useAuth } from '../context/AuthContext';
+
 import "./Profile.css";
 
 const Profile = () => {
-  const history = useNavigate(); // Initialize useHistory hook
-  const { user } = useAuth(); // Access the current user from your authentication context
+  const history = useNavigate();
+  const { user } = useAuth();
   const [userData, setUserData] = useState(null);
-  const [profiled, setProfiled] = useState(null); // Define profiled state
 
   useEffect(() => {
     const fetchUserData = async () => {
       if (!user) {
-        // If there is no logged-in user, redirect to the login page
         history.push('/login');
         return;
       }
 
       try {
         const userDocRef = doc(db, 'Auth', user.uid);
-        const userDocSnapshot = await getDoc(userDocRef);
+        const userDocSnapshot = await getDoc(userDocRef); // Use getDoc function
         if (userDocSnapshot.exists()) {
           setUserData(userDocSnapshot.data());
         } else {
@@ -37,18 +36,22 @@ const Profile = () => {
     fetchUserData();
   }, [user, history]);
 
-  // Define handleUpdateprofiled function
-  const handleUpdateprofiled = (id) => {
-    console.log('Update profile for id:', id);
-    // Implement your update logic here
-  };
+  const handleSaveRecord = async () => {
+    const bloodPressure = document.getElementById('bloodPressure').value;
+    const sugarLevel = document.getElementById('sugarLevel').value;
 
-  // Define handleDeleteprofiled function
-  const handleDeleteprofiled = (id) => {
-    console.log('Delete profile for id:', id);
-    // Implement your delete logic here
+    try {
+      await addDoc(collection(db, 'userRecords'), {
+        userId: user.uid,
+        bloodPressure,
+        sugarLevel,
+        timestamp: new Date().toISOString()
+      });
+      console.log('Record saved successfully.');
+    } catch (error) {
+      console.error('Error saving record:', error);
+    }
   };
-
 
   return (
     <div>
@@ -57,16 +60,10 @@ const Profile = () => {
         <h2>Profile Page</h2>
         {userData ? (
           <ul>
-            {/* Mapping userData directly as it's an object, not an array */}
             <li>
               <p>Email: {userData.Email}</p>
               <p>Username: {userData.Username}</p>
-              <p>Age: {userData.Age}</p>
-              <p>Date of Birth: {userData.Dob}</p>
-              <p>Gender: {userData.Gender}</p>
-              <p>Address: {userData.Address}</p>
-              <p>Contact Number: {userData.ContactNumber}</p>
-              <p>Allergies: {userData.Allergies}</p>
+              {/* Display other user information */}
             </li>
           </ul>
         ) : (
@@ -74,14 +71,9 @@ const Profile = () => {
         )}
       </div>
 
-      {/* Edit and update buttons */}
-      <button3 onClick={() => handleUpdateprofiled(profiled?.id)}>Update</button3> 
-      <br></br> <br></br>
-      <button4 onClick={() => handleDeleteprofiled(profiled?.id)}>Delete</button4>
-      <br></br><br></br>
-
       <p>Collect Your Test Results Here</p>
-      <br></br>
+      <br />
+
       <table>
         <thead>
           <tr>
@@ -95,9 +87,10 @@ const Profile = () => {
         </tbody>
         <tfoot>
           <tr>
-            <td><input type="text" placeholder="Enter blood pressure" /></td>
-            <td><input type="text" placeholder="Enter sugar level" /></td>
-            <td><button5>Submit</button5></td>
+            <td><input type="date" id="date" placeholder="Select date" /></td>
+            <td><input type="text" id="bloodPressure" placeholder="Enter blood pressure" /></td>
+            <td><input type="text" id="sugarLevel" placeholder="Enter sugar level" /></td>
+            <td><button onClick={handleSaveRecord}>Save Record</button></td>
           </tr>
         </tfoot>
       </table>

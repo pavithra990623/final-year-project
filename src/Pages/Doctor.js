@@ -5,10 +5,10 @@ import "./Doctor.css";
 import 'remixicon/fonts/remixicon.css';
 
 // Importing images
-const doctor1 = require('../asserts/img/doctors/doctors-1.jpg');
-const doctor2 = require('../assetrs/img/doctors/doctors-2.jpg');
-const doctor3 = require('../assetrs/img/doctors/doctors-3.jpg');
-const doctor4 = require('../assetrs/img/doctors/doctors-4.jpg');
+const doctor1 = require('D:/year3/A-individual project/final-year-project/src/asserts/img/doctors/doctors-1.jpg');
+const doctor2 = require('D:/year3/A-individual project/final-year-project/src/asserts/img/doctors/doctors-2.jpg');
+const doctor3 = require('D:/year3/A-individual project/final-year-project/src/asserts/img/doctors/doctors-3.jpg');
+const doctor4 = require('D:/year3/A-individual project/final-year-project/src/asserts/img/doctors/doctors-4.jpg');
 
 
 
