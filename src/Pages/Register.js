@@ -84,7 +84,7 @@ const Register = () => {
                   <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
                 </label>
                 <label>
-                  <span>Gender:</span>
+                  <span>Adderss:</span>
                   <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
                 </label>
                 <label>
@@ -106,11 +106,11 @@ const Register = () => {
               </div>
             </div>
             <button type="button" onClick={handleRegister}>Register</button>
-
+<br></br><br></br><br></br>
           </form>
 
           
-          <h3>The image of vaccination card</h3>
+          <h3>The image of Medical Records; If have any</h3>
           <input type="file" onChange={(e) => setImg(e.target.files[0])} />
           <br></br>
           <button onClick={handleClick}>Upload</button>

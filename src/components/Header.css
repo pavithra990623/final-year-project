@@ -27,6 +27,13 @@
   color: #080f47; /* Change color on hover */
 }
 
+.header img {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Maintain aspect ratio */
+  margin-right: 20px; /* Adjust the margin as needed */
+  float: left;
+}
+
 /* Topbar styles */
 /* #topbar {
   background: #c1baba;
