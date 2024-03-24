@@ -3,7 +3,7 @@
   #hero {
    width: 100%;
    height: 100vh;
-   background-image: url('../asserts/imageone.png'); /* Update path accordingly */
+   background-image: url('D:/year3\A-individual project/final-year-project/src/asserts/slideim3.webp'); /* Update path accordingly */
    background-size: cover;
    margin-bottom: -200px;
   }
