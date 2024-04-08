@@ -56,6 +56,48 @@ const Lab = () => {
     <div>
       <Header />
       <div className="lab-container">
+
+      {/* Form to add a new report */}
+        <h3>Add New Report</h3>
+        <form>
+          <label>
+            Patient Name
+            <input
+              type="text"
+              value={newReport.patientName}
+              onChange={(e) => setNewReport({ ...newReport, patientName: e.target.value })}
+            />
+          </label>
+          <br />
+
+          <label>
+            Report Type
+            <input
+              type="text"
+              value={newReport.reportType}
+              onChange={(e) => setNewReport({ ...newReport, reportType: e.target.value })}
+            />
+          </label>
+          <br />
+
+          <label>
+            Date
+            <input
+              type="date"
+              value={newReport.date}
+              onChange={(e) => setNewReport({ ...newReport, date: e.target.value })}
+            />
+          </label>
+          <br />
+
+          {/* File input for uploading an image */}
+          <h3>The image of the Report</h3>
+          <input type="file" onChange={(e) => setImg(e.target.files[0])} />
+          <br />
+          <button onClick={handleClick}>Upload</button>
+        </form>
+
+
         {/* Table to display existing reports */}
         <h2>Lab Reports</h2>
         <table className="lab-table">
@@ -84,45 +126,7 @@ const Lab = () => {
           </tbody>
         </table>
 
-        {/* Form to add a new report */}
-        <h3>Add New Report</h3>
-        <form>
-          <label>
-            Patient Name
-            <input
-              type="text"
-              value={newReport.patientName}
-              onChange={(e) => setNewReport({ ...newReport, patientName: e.target.value })}
-            />
-          </label>
-          <br />
-
-          <label>
-            Report Type
-            <input
-              type="text"
-              value={newReport.reportType}
-              onChange={(e) => setNewReport({ ...newReport, reportType: e.target.value })}
-            />
-          </label>
-          <br />
-
-          <label>
-            Date
-            <input
-              type="text"
-              value={newReport.date}
-              onChange={(e) => setNewReport({ ...newReport, date: e.target.value })}
-            />
-          </label>
-          <br />
-
-          {/* File input for uploading an image */}
-          <h3>The image of the Report</h3>
-          <input type="file" onChange={(e) => setImg(e.target.files[0])} />
-          <br />
-          <button onClick={handleClick}>Upload</button>
-        </form>
+        
       </div>
       <Footer />
     </div>
