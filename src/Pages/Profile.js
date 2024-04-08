@@ -202,8 +202,13 @@ function Profile() {
 
       {/* Buttons for Edit and Delete */}
       <div className='button-container'>
-        {/* Add button to save record */}
-        <button onClick={handleAddData}>Save Record</button>
+
+       {/* Add button to save record */}
+       
+       <button onClick={handleAddData}>Add Record</button><br></br><br></br>
+
+      {/* Add button to save record */}
+      <button onClick={handleAddData}>Save Record</button>
       </div>
 
       {/* Table for recording */}

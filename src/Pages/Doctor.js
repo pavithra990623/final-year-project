@@ -24,7 +24,7 @@ function Doctor() {
 
           <div className="section-title">
             <h2>Doctors</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <p>Driven by a passion to alleviate great pains, our doctor ensures that patients' needs are met, offering synthetic yet effective solutions. With an unwavering commitment to care, anyone seeking relief can trust in our doctor's expertise. No obstacle deters the pursuit of better health, as our doctor tirelessly works to provide comfort and healing in every medical encounter.</p>
           </div>
 
           <div className="row">
@@ -33,9 +33,10 @@ function Doctor() {
               <div className="member d-flex align-items-start">
                 <div className="pic"><img src={doctor1} className="img-fluid" alt="" /></div>
                 <div className="member-info">
-                  <h4>Walter White</h4>
-                  <span>Chief Medical Officer</span>
-                  <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                  <h4>Dr. C. Johnson</h4>
+                  <span>Specialization: Cardiology</span>
+                  <p>Experience: With over 15 years of practice, Dr. Johnson has honed her skills in diagnosing and treating various cardiovascular conditions.
+Philosophy: Driven by compassion, he believes in providing personalized care to each patient, ensuring they receive the best possible treatment tailored to their needs.</p>
                   <div className="social">
                     <a href=""><i className="ri-twitter-fill"></i></a>
                     <a href=""><i className="ri-facebook-fill"></i></a>
@@ -50,9 +51,10 @@ function Doctor() {
               <div className="member d-flex align-items-start">
                 <div className="pic"><img src={doctor2} className="img-fluid" alt="" /></div>
                 <div className="member-info">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Anesthesiologist</span>
-                  <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                  <h4>Dr. E. Roberts</h4>
+                  <span>Specialization: Pediatrics</span>
+                  <p>Experience: Dr. Roberts has dedicated her career to caring for children, drawing from her extensive experience working in pediatric hospitals and clinics.
+Philosophy: With a warm and empathetic approach, Dr. Roberts believes in building strong relationships with both her young patients and their families, ensuring they feel supported and understood throughout their healthcare journey.</p>
                   <div className="social">
                     <a href=""><i className="ri-twitter-fill"></i></a>
                     <a href=""><i className="ri-facebook-fill"></i></a>
@@ -67,9 +69,10 @@ function Doctor() {
               <div className="member d-flex align-items-start">
                 <div className="pic"><img src={doctor3} className="img-fluid" alt="" /></div>
                 <div className="member-info">
-                  <h4>William Anderson</h4>
-                  <span>Cardiology</span>
-                  <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+                  <h4>Dr. A. Michael </h4>
+                  <span>Specialization: Orthopedics</span>
+                  <p>Experience: As a seasoned orthopedic surgeon with a decade of experience, Dr. Anderson has performed numerous successful joint replacements and orthopedic surgeries.
+Philosophy: Committed to restoring mobility and improving quality of life, Dr. Anderson approaches each case with meticulous attention to detail and a focus on patient-centered care.</p>
                   <div className="social">
                     <a href=""><i className="ri-twitter-fill"></i></a>
                     <a href=""><i className="ri-facebook-fill"></i></a>
@@ -84,9 +87,10 @@ function Doctor() {
               <div className="member d-flex align-items-start">
                 <div className="pic"><img src={doctor4} className="img-fluid" alt="" /></div>
                 <div className="member-info">
-                  <h4>Amanda Jepson</h4>
-                  <span>Neurosurgeon</span>
-                  <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+                  <h4>Dr. David Lee</h4>
+                  <span>Specialization: Neurology</span>
+                  <p>Experience: Dr. Lee brings a wealth of knowledge and expertise to the field of neurology, having conducted groundbreaking research and successfully treated complex neurological conditions.
+Philosophy: Dr. Lee is passionate about empowering his patients by providing them with comprehensive education and personalized treatment plans, guiding them towards optimal neurological health and well-being.</p>
                   <div className="social">
                     <a href=""><i className="ri-twitter-fill"></i></a>
                     <a href=""><i className="ri-facebook-fill"></i></a>
