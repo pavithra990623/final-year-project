@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 import { db, imagedb } from '../firebase.Config'; // Correct import
 import { v4 as uuidv4 } from 'uuid';
 import { ref, uploadBytes } from 'firebase/storage';
@@ -85,7 +85,7 @@ const Register = () => {
                 </label>
                 <label>
                   <span>Adderss:</span>
-                  <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
+                  <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
                 </label>
                 <label>
                   <span>Address:</span>
@@ -119,7 +119,7 @@ const Register = () => {
       </div>
 
       <br></br>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
