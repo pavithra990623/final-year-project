@@ -182,7 +182,7 @@ function Profile() {
       <Header />
       <div className='profile-container'>
         <h2>About Me</h2>
-        {/* Display user details */}
+        {/* Display user details
         <div>
         <p><strong>Username:</strong> Johnny</p>
           <p><strong>Email:</strong> Johnny@gmail.com</p>
@@ -192,23 +192,23 @@ function Profile() {
           <p><strong>Address:</strong></p>
           <p><strong>Contact Number:</strong> 1234567898765</p>
           <p><strong>Allergies:</strong> vaccine allergy on peniciline, can't eat pineapple</p>
-        </div>
+        </div> */}
       </div>
 
-      {/* Display Chart */}
+      {/* Display Chart
       <div className='chart-container'>
         <canvas id='myChart'></canvas>
-      </div>
+      </div> */}
 
       {/* Buttons for Edit and Delete */}
       <div className='button-container'>
 
        {/* Add button to save record */}
-       
+
        <button onClick={handleAddData}>Add Record</button><br></br><br></br>
 
       {/* Add button to save record */}
-      <button onClick={handleAddData}>Save Record</button>
+      <button onClick={handleAddData}>Save Record</button> <br></br><br></br>
       </div>
 
       {/* Table for recording */}
@@ -217,8 +217,7 @@ function Profile() {
           <thead>
             <tr>
               <th>Date</th>
-              <th>Blood Sugar Level</th>
-              <th>Cholestrol</th>
+              <th>Mesurement</th>
             </tr>
           </thead>
           <tbody>
@@ -227,8 +226,7 @@ function Profile() {
           <tfoot>
             <tr>
               <td><input type='date' id='date' placeholder='Select date' /></td>
-              <td><input type='text' id='bloodPressure' placeholder='Enter blood pressure' /></td>
-              <td><input type='text' id='sugarLevel' placeholder='Enter sugar level' /></td>
+              <td><input type='text' id='bloodPressure' placeholder='Enter the Mesurement' /></td>
               {/* Remove the button from here */}
             </tr>
           </tfoot>
