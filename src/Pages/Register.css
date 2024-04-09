@@ -10,16 +10,16 @@
 body {
   height: 100vh;
   /* display: flex; */
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   padding: 10px;
   /* background: linear-gradient(135deg, #989fa3, #b9c9d5); */
 }
 
 .rcontainer {
-  display: flex;
-  justify-content: center;
-  max-width: 700px;
+  /* display: flex; */
+  /* justify-content: center; */
+  max-width: 100%;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
@@ -74,7 +74,7 @@ body {
   border-radius: 5px;
   padding-left: 15px;
   border: 1px solid #ccc;
-  border-bottom-width: 2px;
+  /* border-bottom-width: 2px; */
   transition: all 0.3s ease;
 }
 
