@@ -17,6 +17,7 @@ const Register = () => {
   const [address, setAddress] = useState('');
   const [contactNumber, setContactNumber] = useState('');
   const [allergies, setAllergies] = useState('');
+  const [nic, setNic] = useState('');
   const [img, setImg] = useState(null);
   const [metch, setMetch] = useState([]);
   const dbref = collection(db, "Auth");
@@ -100,9 +101,14 @@ const Register = () => {
                   <input type="text" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} />
                 </label>
                 <label>
+                  <span>NIC:</span>
+                  <input type="text" value={nic} onChange={(e) => setNic(e.target.value)} />
+                </label>
+                <label>
                   <span>Allergies:</span>
                   <input type="text" value={allergies} onChange={(e) => setAllergies(e.target.value)} />
                 </label>
+                
               </div>
             </div>
             <button type="button" onClick={handleRegister}>Register</button>
