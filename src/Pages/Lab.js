@@ -1,63 +1,49 @@
-// Lab.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { imagedb } from '../firebase.Config';
-import { v4 as uuidv4 } from 'uuid'; // Import statement for v4
+import { db, imagedb } from '../firebase.Config';
+import { v4 as uuidv4 } from 'uuid';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { collection, addDoc, getDocs, deleteDoc } from 'firebase/firestore';
+import { doc } from 'firebase/firestore';
+
 import './Lab.css';
 import './Register.css';
-import { ref, uploadBytes } from 'firebase/storage'; // Import ref and uploadBytes
 
 const Lab = () => {
-  // State for managing reports
-  const [reports, setReports] = useState([
-    { id: 1, patientName: "", reportType: "", date: "" },
-    { id: 2, patientName: "", reportType: "", date: "" },
-    // Add more sample data as needed
-  ]);
-
-  // State for managing a new report
-  const [newReport, setNewReport] = useState({
-    patientName: "",
-    reportType: "",
-    date: "",
-  });
-
-  // State for managing the image file
+  const [reports, setReports] = useState([]);
+  const [newReport, setNewReport] = useState({ patientName: "", reportType: "", date: "" });
   const [img, setImg] = useState(null);
 
-  // Function to handle image upload
-  const handleClick = () => {
-    const storageRef = ref(imagedb, `files/${uuidv4()}`); // Generate a unique file path
-    uploadBytes(storageRef, img).then((snapshot) => {
-      console.log('Uploaded a blob or file!', snapshot);
-    }).catch((error) => {
-      console.error('Error uploading file:', error);
-    });
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      const reportsRef = collection(db, 'labReports');
+      const snapshot = await getDocs(reportsRef);
+      const reportsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setReports(reportsData);
+    };
+    fetchData();
+  }, []);
 
-  // Function to add a new report
-  const handleAddReport = () => {
-    setReports([...reports, { id: reports.length + 1, ...newReport }]);
+  const handleClick = async () => {
+    const storageRef = ref(imagedb, `files/${uuidv4()}`);
+    await uploadBytes(storageRef, img);
+    const imageUrl = await getDownloadURL(storageRef);
+    const newReportWithImage = { ...newReport, imageUrl };
+    await addDoc(collection(db, 'labReports'), newReportWithImage);
+    setReports([...reports, newReportWithImage]);
     setNewReport({ patientName: "", reportType: "", date: "" });
   };
 
-  // Function to update a report (not implemented in this example)
-  const handleUpdateReport = (id) => {
-    console.log(`Update report with ID: ${id}`);
-  };
-
-  // Function to delete a report
-  const handleDeleteReport = (id) => {
-    setReports(reports.filter((report) => report.id !== id));
+  const handleDeleteReport = async (id) => {
+    await deleteDoc(doc(db, 'labReports', id));
+    setReports(reports.filter(report => report.id !== id));
   };
 
   return (
     <div>
       <Header />
       <div className="lab-container">
-
-      {/* Form to add a new report */}
         <h3>Add New Report</h3>
         <form>
           <label>
@@ -90,15 +76,12 @@ const Lab = () => {
           </label>
           <br />
 
-          {/* File input for uploading an image */}
           <h3>The image of the Report</h3>
           <input type="file" onChange={(e) => setImg(e.target.files[0])} />
           <br />
-          <button onClick={handleClick}>Upload</button>
+          <button type="button" onClick={handleClick}>Upload</button>
         </form>
 
-
-        {/* Table to display existing reports */}
         <h2>Lab Reports</h2>
         <table className="lab-table">
           <thead>
@@ -107,6 +90,7 @@ const Lab = () => {
               <th>Patient Name</th>
               <th>Report Type</th>
               <th>Date</th>
+              <th>Image</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -118,15 +102,15 @@ const Lab = () => {
                 <td>{report.reportType}</td>
                 <td>{report.date}</td>
                 <td>
-                  <button1 onClick={() => handleUpdateReport(report.id)}>Update</button1>
-                  <button2 onClick={() => handleDeleteReport(report.id)}>Delete</button2>
+                  {report.imageUrl && <img src={report.imageUrl} alt="Report" style={{ width: '100px', height: 'auto' }} />}
+                </td>
+                <td>
+                  <button onClick={() => handleDeleteReport(report.id)}>Delete</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-
-        
       </div>
       <Footer />
     </div>
