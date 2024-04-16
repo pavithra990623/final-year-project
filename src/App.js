@@ -10,7 +10,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Profile from "./Pages/Profile";
 import About from "./Pages/About";
-
+import Patientlabr from "./Pages/Patientlabr";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -70,6 +70,9 @@ function App() {
 
           {/* Doctor Route */}
           <Route path="/Doctor" element={<Doctor />} /> 
+
+          {/*Patientlabr Route */}
+          <Route path="/Patientlabr" element={<Patientlabr />} /> 
 
         </Routes>
       </BrowserRouter>

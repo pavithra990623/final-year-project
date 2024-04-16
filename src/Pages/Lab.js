@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import { db, imagedb } from '../firebase.Config';
 import { v4 as uuidv4 } from 'uuid';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { collection, addDoc, getDocs, deleteDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs, deleteDoc, editDoc } from 'firebase/firestore'; // Import editDoc
 import { doc } from 'firebase/firestore';
 
 import './Lab.css';
@@ -38,6 +38,11 @@ const Lab = () => {
   const handleDeleteReport = async (id) => {
     await deleteDoc(doc(db, 'labReports', id));
     setReports(reports.filter(report => report.id !== id));
+  };
+
+  const handleEditReport = async (id) => { // Define handleEditReport function
+    // Perform edit operation here
+    console.log(`Editing report with ID: ${id}`);
   };
 
   return (
@@ -105,7 +110,8 @@ const Lab = () => {
                   {report.imageUrl && <img src={report.imageUrl} alt="Report" style={{ width: '100px', height: 'auto' }} />}
                 </td>
                 <td>
-                  <button onClick={() => handleDeleteReport(report.id)}>Delete</button>
+                  <button1 onClick={() => handleEditReport(report.id)}>Edit</button1> {/* Use handleEditReport function */}
+                  <button2 onClick={() => handleDeleteReport(report.id)}>Delete</button2>
                 </td>
               </tr>
             ))}
