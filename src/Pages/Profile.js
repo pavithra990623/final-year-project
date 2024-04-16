@@ -152,11 +152,11 @@ function Profile() {
   const handleAddData = () => {
     const dateInput = document.getElementById('date');
     const bloodPressureInput = document.getElementById('bloodPressure');
-    const sugarLevelInput = document.getElementById('sugarLevel');
+    // const sugarLevelInput = document.getElementById('sugarLevel');
 
     const date = dateInput.value;
     const bloodPressure = bloodPressureInput.value;
-    const sugarLevel = sugarLevelInput.value;
+    // const sugarLevel = sugarLevelInput.value;
 
     // Add new data to the chart
     setChartData({
@@ -174,7 +174,7 @@ function Profile() {
     // Clear input fields after adding data
     dateInput.value = '';
     bloodPressureInput.value = '';
-    sugarLevelInput.value = '';
+    // sugarLevelInput.value = '';
   };
 
   return (
