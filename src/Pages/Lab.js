@@ -7,6 +7,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { collection, addDoc, getDocs, deleteDoc, editDoc } from 'firebase/firestore'; // Import editDoc
 import { doc } from 'firebase/firestore';
 
+
 import './Lab.css';
 import './Register.css';
 
