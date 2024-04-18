@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Login.css";
+import "./Login.css"; 
 
-import { database } from "../firebase.Config";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-
+import { auth } from "../firebase.Config";
+import { signInWithEmailAndPassword } from "firebase/auth"; 
 
 function Login() {
   const history = useNavigate();
@@ -16,26 +15,21 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
-  const {user, setUser} = useAuth();
+  const { user, setUser } = useAuth();
+
   useEffect(() => {
-    if(user) history("/")
-  }, [user])
+    if(user) history("/");
+  }, [user, history]);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-
-    createUserWithEmailAndPassword(database, email, password)
-      .then((data) => {
-        setUser(data._tokenResponse);
-        console.log(data, "authData");
-        // Redirect to '/Home' on successful login
-        history("/");
-      })
-      .catch((error) => {
-        // Handle authentication errors
-        setError("Wrong email or password!");
-        console.error(error);
-      });
+    try {
+      await signInWithEmailAndPassword(auth, email, password); 
+      history("/");
+    } catch (error) {
+      setError("Wrong email or password!");
+      console.error(error);
+    }
   };
 
   return (

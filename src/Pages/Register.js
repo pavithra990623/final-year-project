@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
-// import Footer from '../components/Footer';
-import { db, imagedb } from '../firebase.Config'; // Correct import
+import { db, imagedb, auth } from '../firebase.Config'; // Correct import including auth
 import { v4 as uuidv4 } from 'uuid';
 import { ref, uploadBytes } from 'firebase/storage';
 import { getDocs, addDoc, collection, where, query } from 'firebase/firestore';
-import { doc, setDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -21,6 +20,7 @@ const Register = () => {
   const [img, setImg] = useState(null);
   const [metch, setMetch] = useState([]);
   const dbref = collection(db, "Auth");
+  const navigate = useNavigate();
 
   const handleRegister = async () => {
     const matchEmail = query(dbref, where('Email', '==', email));
@@ -32,15 +32,26 @@ const Register = () => {
         alert("This Email Address Already Existed");
       } else {
         await addDoc(dbref, { Email: email, Username: username, Password: password, Age: age, Dob: dob, Gender: gender, Address: address, ContactNumber: contactNumber, Allergies: allergies });
-        alert('Signup Successful');
+        alert('Registered Successful');
+        navigate('/'); // Navigate to Home page after successful registration
       }
     } catch (error) {
       alert(error);
     }
   };
+
+  // Example registration function
+  const handleRegistration = async (email, password) => {
+    try {
+      await auth.createUserWithEmailAndPassword(email, password);
+      // Registration successful, navigate to Home page
+      navigate('/');
+    } catch (error) {
+      // Handle registration error
+      console.error(error);
+    }
+  };
   
-
-
   // Function to handle image upload
   const handleClick = () => {
     const storageRef = ref(imagedb, `files/${uuidv4()}`); // Generate a unique file path
