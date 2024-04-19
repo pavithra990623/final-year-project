@@ -32,9 +32,9 @@
 }
 
 .header img {
-  width: 30px; /* Adjust the width as needed */
+  width: 60px; /* Adjust the width as needed */
   height: 30px; /* Maintain aspect ratio */
-  margin-right: 20px; /* Adjust the margin as needed */
+  margin-right: 10px; /* Adjust the margin as needed */
   float: left;
 }
 
