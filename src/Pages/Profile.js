@@ -1,42 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { db } from '../firebase.Config'; // Import Firebase Firestore instance
+import { db, auth } from '../firebase.Config'; // Import Firebase Firestore instance and Auth
 import { doc, getDoc } from 'firebase/firestore';
 
 function Profile() {
   const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [userUid, setUserUid] = useState(null); // State to store the user's UID
 
   useEffect(() => {
-    // Function to fetch user data from Firestore
-    const fetchUserData = async () => {
-      // Replace 'userUid' with the actual UID of the logged-in user
-      const userUid = 'replace-with-actual-user-uid';
-      
-      try {
-        const userDocRef = doc(db, 'users', userUid); // Assuming 'users' is your collection name
-        const userDocSnapshot = await getDoc(userDocRef);
-        
-        if (userDocSnapshot.exists()) {
-          setUserData(userDocSnapshot.data());
-        } else {
-          console.log('User document does not exist');
-        }
-      } catch (error) {
-        console.error('Error fetching user data:', error);
+    // Listener for authentication state changes
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in, get the UID
+        setUserUid(user.uid);
+      } else {
+        // No user is signed in
+        setUserUid(null);
       }
-    };
+    });
 
-    fetchUserData(); // Fetch user data when the component mounts
-  }, []);
+    // Fetch user data when the component mounts or when the user UID changes
+    if (userUid) {
+      fetchUserData();
+    }
+
+    // Cleanup function
+    return () => unsubscribe();
+  }, [userUid]); // Trigger useEffect when userUid changes
+
+  const fetchUserData = async () => {
+    try {
+      const userDocRef = doc(db, 'Auth', userUid); // Assuming 'Auth' is your collection name
+      const userDocSnapshot = await getDoc(userDocRef);
+
+      if (userDocSnapshot.exists()) {
+        const userData = userDocSnapshot.data();
+        console.log('Fetched user data:', userData);
+        setUserData(userData);
+      } else {
+        console.log('User document does not exist');
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div>
       <Header />
       <div className='profile-container'>
         <h2>About Me</h2>
-        {/* Placeholder for displaying user data */}
-        {/* {userData && (
+        {loading ? (
+          <p>Loading user data...</p>
+        ) : userData ? (
           <div>
             <p><strong>Username:</strong> {userData.Username}</p>
             <p><strong>Email:</strong> {userData.Email}</p>
@@ -47,37 +67,11 @@ function Profile() {
             <p><strong>Contact Number:</strong> {userData.ContactNumber}</p>
             <p><strong>Allergies:</strong> {userData.Allergies}</p>
           </div>
-        )} */}
+        ) : (
+          <p>No user data available.</p>
+        )}
       </div>
-
-      <div className='chart-container'>
-        <canvas id='myChart'></canvas>
-      </div>
-
-      <div className='button-container'>
-        <button onClick="">Add Record</button>
-      </div>
-
-      <div className='record-table'>
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Measurement</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* Render table rows for existing readings */}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td><input type='date' id='date' placeholder='Select date' /></td>
-              <td><input type='text' id='bloodPressure' placeholder='Enter the Measurement' /></td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-
+      {/* Other profile page content */}
       <Footer />
     </div>
   );
