@@ -1,77 +1,113 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { db, auth } from '../firebase.Config'; // Import Firebase Firestore instance and Auth
-import { doc, getDoc } from 'firebase/firestore';
+import { db, auth } from '../firebase.Config';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
-  const [userData, setUserData] = useState(null);
+  const [userDetails, setUserDetails] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [userUid, setUserUid] = useState(null); // State to store the user's UID
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Listener for authentication state changes
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        // User is signed in, get the UID
-        setUserUid(user.uid);
-      } else {
-        // No user is signed in
-        setUserUid(null);
+    const fetchUserData = async () => {
+      setLoading(true);
+      setError('');
+      try {
+        const user = auth.currentUser;
+        if (!user) throw new Error('No user logged in');
+        const userDoc = await getDoc(doc(db, 'users', user.uid));  // Assuming 'users' is the correct collection
+        if (userDoc.exists()) {
+          setUserDetails(userDoc.data());
+        } else {
+          setError('No user data found.');
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+        setError(error.message);
       }
-    });
+      setLoading(false);
+    };
 
-    // Fetch user data when the component mounts or when the user UID changes
-    if (userUid) {
-      fetchUserData();
+    fetchUserData();
+  }, []);
+
+  const handleUpdateProfile = async () => {
+    if (!userDetails) {
+      alert('No user details to update.');
+      return;
     }
 
-    // Cleanup function
-    return () => unsubscribe();
-  }, [userUid]); // Trigger useEffect when userUid changes
+    const updatedDetails = Object.fromEntries(
+      Object.entries(userDetails).filter(([_, value]) => value)
+    );
 
-  const fetchUserData = async () => {
+    if (Object.keys(updatedDetails).length === 0) {
+      alert('No changes to update');
+      return;
+    }
+
     try {
-      const userDocRef = doc(db, 'Auth', userUid); // Assuming 'Auth' is your collection name
-      const userDocSnapshot = await getDoc(userDocRef);
-
-      if (userDocSnapshot.exists()) {
-        const userData = userDocSnapshot.data();
-        console.log('Fetched user data:', userData);
-        setUserData(userData);
-      } else {
-        console.log('User document does not exist');
-      }
+      const user = auth.currentUser;
+      await updateDoc(doc(db, 'users', user.uid), updatedDetails);
+      alert('Profile updated successfully');
     } catch (error) {
-      console.error('Error fetching user data:', error);
-    } finally {
-      setLoading(false);
+      console.error('Error updating profile:', error);
+      alert('Failed to update profile: ' + error.message);
     }
   };
+
+  const handleLogout = async () => {
+    try {
+      await auth.signOut();
+      navigate('/login');
+    } catch (error) {
+      console.error('Error during logout:', error);
+      alert('Failed to logout: ' + error.message);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserDetails(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div>
       <Header />
       <div className='profile-container'>
         <h2>About Me</h2>
-        {loading ? (
-          <p>Loading user data...</p>
-        ) : userData ? (
+        {error ? (
+          <p>Error: {error}</p>
+        ) : userDetails ? (
           <div>
-            <p><strong>Username:</strong> {userData.Username}</p>
-            <p><strong>Email:</strong> {userData.Email}</p>
-            <p><strong>Age:</strong> {userData.Age}</p>
-            <p><strong>Gender:</strong> {userData.Gender}</p>
-            <p><strong>Dob:</strong> {userData.Dob}</p>
-            <p><strong>Address:</strong> {userData.Address}</p>
-            <p><strong>Contact Number:</strong> {userData.ContactNumber}</p>
-            <p><strong>Allergies:</strong> {userData.Allergies}</p>
+            <p>Username: {userDetails.username}</p>
+            <p>Email: {userDetails.email}</p>
+            <p>Age: {userDetails.age}</p>
+            <p>Gender: {userDetails.gender}</p>
+            <p>Date of Birth: {userDetails.dob}</p>
+            <p>Address: {userDetails.address}</p>
+            <p>Contact Number: {userDetails.contactNumber}</p>
+            <p>Allergies: {userDetails.allergies}</p>
+            <p>NIC: {userDetails.nic}</p>
           </div>
         ) : (
           <p>No user data available.</p>
         )}
+
+        
+        <button type="button" onClick={handleUpdateProfile}>Update Profile</button>
+        <button type="button" onClick={handleLogout}>Logout</button>
       </div>
-      {/* Other profile page content */}
       <Footer />
     </div>
   );
