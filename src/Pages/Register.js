@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { ref, uploadBytes } from 'firebase/storage';
 import { getDocs, addDoc, collection, where, query } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -41,16 +42,16 @@ const Register = () => {
   };
 
   // Example registration function
-  const handleRegistration = async (email, password) => {
-    try {
-      await auth.createUserWithEmailAndPassword(email, password);
-      // Registration successful, navigate to Home page
-      navigate('/');
-    } catch (error) {
-      // Handle registration error
-      console.error(error);
-    }
-  };
+  // const handleRegistration = async (email, password) => {
+  //   try {
+  //     await auth.createUserWithEmailAndPassword(email, password);
+  //     // Registration successful, navigate to Home page
+  //     navigate('/');
+  //   } catch (error) {
+  //     // Handle registration error
+  //     console.error(error);
+  //   }
+  // };
   
   // Function to handle image upload
   const handleClick = () => {
