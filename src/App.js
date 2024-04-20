@@ -1,7 +1,6 @@
 import React, { } from "react";
-import { BrowserRouter, Route, Routes, } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
 import './App.css';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from "./Pages/Home";
@@ -11,22 +10,22 @@ import Register from "./Pages/Register";
 import Profile from "./Pages/Profile";
 import About from "./Pages/About";
 import Patientlabr from "./Pages/Patientlabr";
-
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Slideshow from "./components/Slideshow";
 import Doctor from "./Pages/Doctor";
-
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
 
 function App() {
+  
+  const currentUser = true;
   // Assuming you have authContext imported or defined somewhere in your code
   //const { currentUser } = useContext(AuthContext);
 
-  //const RequireAuth = ({ children }) => {
-   // return currentUser ? children : <Navigate to="/login" />;
-  //};
+  const RequireAuth = ({ children }) => {
+  return currentUser ? children : <Navigate to="/login" />;
+  };
 
   return (
     <div>
@@ -36,9 +35,9 @@ function App() {
           <Route
             path="/"
             element={
-             // <RequireAuth>
+              <RequireAuth>
                 <Home />
-             // </RequireAuth>
+              </RequireAuth>
             }
           />
 

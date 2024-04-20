@@ -7,30 +7,57 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { auth } from "../firebase.Config";
-import { signInWithEmailAndPassword } from "firebase/auth"; 
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-function Login() {
-  const history = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+//
+// function Login() {
+//   const history = useNavigate();
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [error, setError] = useState(null);
 
-  const { user, setUser } = useAuth();
+//   const { user, setUser } = useAuth();
 
-  useEffect(() => {
-    if(user) history("/");
-  }, [user, history]);
+//   useEffect(() => {
+//     if(user) history("/");
+//   }, [user, history]);
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password); 
-      history("/");
-    } catch (error) {
-      setError("Wrong email or password!");
-      console.error(error);
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     try {
+//       await signInWithEmailAndPassword(auth, email, password); 
+//       history("/");
+//     } catch (error) {
+//       setError("Wrong email or password!");
+//       console.error(error);
+//     }
+//   };
+//
+
+
+  //
+  const Login = () => {
+    const [error, setError] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const navigate = useNavigate()
+
+    const handleLogin = (e)=>{
+      e.preventDefault()
+
+      signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    navigate("/")
+  })
+  .catch((error) => {
+    setError(true);
+  });
     }
-  };
+  
+  //
 
   return (
     <div>
@@ -46,7 +73,7 @@ function Login() {
                 type="email"
                 name="email"
                 placeholder="email"
-                value={email}
+                
                 onChange={(e) => setEmail(e.target.value)}
               />
             </label>
@@ -57,7 +84,7 @@ function Login() {
                 type="password"
                 name="password"
                 placeholder="password"
-                value={password}
+                
                 onChange={(e) => setPassword(e.target.value)}
               />
             </label>
@@ -65,7 +92,7 @@ function Login() {
             <button type="submit" className="logbutton">
               Login
             </button>
-            {error && <span>{error}</span>}
+            {error && <span1>{error}</span1>}
           </form>
         </div>
       </div>
@@ -74,5 +101,6 @@ function Login() {
     </div>
   );
 }
+//}
 
 export default Login;   
