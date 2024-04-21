@@ -47,6 +47,16 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
       e.preventDefault()
 
       signInWithEmailAndPassword(auth, email, password)
+      
+  //     .then((userCredential) => {
+  //       console.log(userCredential);
+  //       navigate("/")
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
@@ -56,7 +66,6 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
     setError(true);
   });
     }
-  
   //
 
   return (
