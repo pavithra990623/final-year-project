@@ -6,6 +6,7 @@ import { ref, uploadBytes } from 'firebase/storage';
 import { getDocs, addDoc, collection, where, query } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -23,6 +24,19 @@ const Register = () => {
   const dbref = collection(db, "Auth");
   const navigate = useNavigate();
 
+  // const handleRegister = (e) => {
+  //   e.preventDefault();
+  //   createUserWithEmailAndPassword(auth, email, password)
+  //     .then((userCredential) => {
+  //       console.log(userCredential);
+  //       alert('Registered Successful');
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       navigate('/');
+  //     });
+  // };
+
   const handleRegister = async () => {
     const matchEmail = query(dbref, where('Email', '==', email));
 
@@ -34,7 +48,7 @@ const Register = () => {
       } else {
         await addDoc(dbref, { Email: email, Username: username, Password: password, Age: age, Dob: dob, Gender: gender, Address: address, ContactNumber: contactNumber, Allergies: allergies });
         alert('Registered Successful');
-        navigate('/'); // Navigate to Home page after successful registration
+        navigate('/Login'); // Navigate to Home page after successful registration
       }
     } catch (error) {
       alert(error);
