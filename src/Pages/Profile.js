@@ -77,6 +77,10 @@ function Profile() {
     }));
   };
 
+  const handleNavigateToImageUpload = () => {
+    navigate('/imageupload');
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -104,10 +108,11 @@ function Profile() {
           <p>No user data available.</p>
         )}
 
-        
         <button type="button" onClick={handleUpdateProfile}>Update Profile</button>
         <button type="button" onClick={handleLogout}>Logout</button>
+        <button type="button" onClick={handleNavigateToImageUpload}>Veiw My Lab Result</button>
       </div>
+      <br></br>
       <Footer />
     </div>
   );

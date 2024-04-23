@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import "./Doctor.css";
@@ -13,6 +13,15 @@ const doctor4 = require('D:/year3/A-individual project/final-year-project/src/as
 
 
 function Doctor() {
+  // State to store booked dates
+  const [bookedDates, setBookedDates] = useState([]);
+
+  // Function to handle booking
+  const handleBooking = (doctorName, date) => {
+    // Add booked date to state
+    setBookedDates([...bookedDates, { doctor: doctorName, date: date }]);
+  };
+
   return (
     <div>
       <Header/>
@@ -37,6 +46,7 @@ function Doctor() {
                   <span>Specialization: Cardiology</span>
                   <p>Experience: With over 15 years of practice, Dr. Johnson has honed her skills in diagnosing and treating various cardiovascular conditions.
 Philosophy: Driven by compassion, he believes in providing personalized care to each patient, ensuring they receive the best possible treatment tailored to their needs.</p>
+                  <button onClick={() => handleBooking("Dr. C. Johnson", "2024-04-23")}>Make Appointment</button>
                   <div className="social">
                     <a href=""><i className="ri-twitter-fill"></i></a>
                     <a href=""><i className="ri-facebook-fill"></i></a>
@@ -54,7 +64,8 @@ Philosophy: Driven by compassion, he believes in providing personalized care to 
                   <h4>Dr. E. Roberts</h4>
                   <span>Specialization: Pediatrics</span>
                   <p>Experience: Dr. Roberts has dedicated her career to caring for children, drawing from her extensive experience working in pediatric hospitals and clinics.
-Philosophy: With a warm and empathetic approach, Dr. Roberts believes in building strong relationships with both her young patients and their families, ensuring they feel supported and understood throughout their healthcare journey.</p>
+Philosophy: With a warm and empathetic approach, she believes in building strong relationships with patients and their families, ensuring they feel supported and understood throughout their healthcare journey.</p>
+                  <button onClick={() => handleBooking("Dr. C. Johnson", "2024-04-23")}>Make Appointment</button>
                   <div className="social">
                     <a href=""><i className="ri-twitter-fill"></i></a>
                     <a href=""><i className="ri-facebook-fill"></i></a>
@@ -73,6 +84,7 @@ Philosophy: With a warm and empathetic approach, Dr. Roberts believes in buildin
                   <span>Specialization: Orthopedics</span>
                   <p>Experience: As a seasoned orthopedic surgeon with a decade of experience, Dr. Anderson has performed numerous successful joint replacements and orthopedic surgeries.
 Philosophy: Committed to restoring mobility and improving quality of life, Dr. Anderson approaches each case with meticulous attention to detail and a focus on patient-centered care.</p>
+                  <button onClick={() => handleBooking("Dr. C. Johnson", "2024-04-23")}>Make Appointment</button>
                   <div className="social">
                     <a href=""><i className="ri-twitter-fill"></i></a>
                     <a href=""><i className="ri-facebook-fill"></i></a>
@@ -91,6 +103,7 @@ Philosophy: Committed to restoring mobility and improving quality of life, Dr. A
                   <span>Specialization: Neurology</span>
                   <p>Experience: Dr. Lee brings a wealth of knowledge and expertise to the field of neurology, having conducted groundbreaking research and successfully treated complex neurological conditions.
 Philosophy: Dr. Lee is passionate about empowering his patients by providing them with comprehensive education and personalized treatment plans, guiding them towards optimal neurological health and well-being.</p>
+                  <button onClick={() => handleBooking("Dr. C. Johnson", "2024-04-23")}>Make Appointment</button>
                   <div className="social">
                     <a href=""><i className="ri-twitter-fill"></i></a>
                     <a href=""><i className="ri-facebook-fill"></i></a>

@@ -14,6 +14,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Slideshow from "./components/Slideshow";
 import Doctor from "./Pages/Doctor";
+import ImageUpload from "./Pages/ImageUpload";
+import One from "./Pages/One";
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
 
@@ -71,7 +73,13 @@ function App() {
           <Route path="/Doctor" element={<Doctor />} /> 
 
           {/*Patientlabr Route */}
-          <Route path="/Patientlabr" element={<Patientlabr />} /> 
+          <Route path="/Patientlabr" element={<Patientlabr />} />
+
+          {/*one*/} 
+          <Route path="/One" element={<One/>} />
+
+          {/*ImageUpload*/}
+          <Route path="/ImageUpload" element={<ImageUpload/>} />
 
         </Routes>
       </BrowserRouter>
