@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link component
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function One() {
   return (
@@ -13,7 +14,7 @@ function One() {
           <h2>Patient</h2>
           <p>Manage patient information</p>
           {/* Use Link to navigate to Patient page */}
-          <Link to="/">
+          <Link to="/Login">
             <button style={{ backgroundColor: '#007bff', color: '#fff', padding: '10px 20px', border: 'none', borderRadius: '20px', cursor: 'pointer' }}>Get Started</button>
           </Link>
         </div>
@@ -27,6 +28,8 @@ function One() {
           </Link>
         </div>
       </div>
+      <br></br><br></br>
+      <Footer/>
     </div>
   );
 }

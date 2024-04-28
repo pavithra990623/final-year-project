@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
+// import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { db, imagedb } from '../firebase.Config';
 import { v4 as uuidv4 } from 'uuid';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { collection, addDoc, getDocs, deleteDoc, editDoc } from 'firebase/firestore'; // Import editDoc
 import { doc } from 'firebase/firestore';
-
+import Sidebarlab from "../components/Sidebarlab";
 
 import './Lab.css';
 import './Register.css';
@@ -48,7 +48,8 @@ const Lab = () => {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
+      <Sidebarlab />
       <div className="lab-container">
         <h3>Add New Report</h3>
         <form>

@@ -18,6 +18,8 @@ import ImageUpload from "./Pages/ImageUpload";
 import One from "./Pages/One";
 import Dashboard from "./Pages/Dashboard";
 import Sidebar from "./Pages/Sidebar";
+import AppointmentBookingPage from "./Pages/AppointmentBookingPage";
+import Calendar from "./components/Calendar";
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
 
@@ -40,7 +42,7 @@ function App() {
             path="/"
             element={
               <RequireAuth>
-                <Home />
+                <One />
               </RequireAuth>
             }
           />
@@ -78,7 +80,7 @@ function App() {
           <Route path="/Patientlabr" element={<Patientlabr />} />
 
           {/*one*/} 
-          <Route path="/One" element={<One/>} />
+          <Route path="/Home" element={<Home/>} />
 
           {/*ImageUpload*/}
           <Route path="/ImageUpload" element={<ImageUpload/>} />
@@ -88,6 +90,13 @@ function App() {
 
            {/*sidebar*/}
            <Route path="/Sidebar" element={<Sidebar/>} />
+
+           {/*Appoinmentmaking page*/}
+           <Route path="/AppointmentBookingPage" element={<AppointmentBookingPage/>} />
+           
+           {/*Calender*/}
+           <Route path="/Calender" element={<Calendar/>} />
+
 
         </Routes>
       </BrowserRouter>

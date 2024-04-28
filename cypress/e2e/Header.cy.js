@@ -48,3 +48,4 @@
 //       cy.url().should('include', '/Doctor');
 //     });
 // });
+
