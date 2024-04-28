@@ -3,13 +3,15 @@ from PIL import Image
 import pytesseract
 import cv2
 import numpy as np
-import os
+import io  # Import io module for BytesIO
 import firebase_admin
 from firebase_admin import credentials, firestore
-from flask_cors import CORS  # Import CORS from flask_cors
+from flask_cors import CORS
+import io
+
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app)
 
 # Initialize Firebase Admin SDK
 cred = credentials.Certificate(r"D:\year3\A-individual project\final-year-project\login-c057b-firebase-adminsdk-yiql7-bb06c12b37.json")
@@ -35,6 +37,13 @@ def upload_image():
     doc_ref.set({
         u'text': ocr_result
     })
+    
+
+    # Add OCR result to Firestore collection (optional)
+    # Assuming you have Firebase Admin initialized and db variable available
+    doc_ref = db.collection(u'ocr_results').add({
+    u'text': ocr_result
+})
 
     return jsonify({'text': ocr_result})
 

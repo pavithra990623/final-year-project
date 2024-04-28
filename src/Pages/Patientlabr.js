@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { db } from '../firebase.Config'; // Import Firebase Firestore instance
-
+import Sidebarlab from "../components/Sidebarlab";
 import './Patientlabr.css';
 
 function Patientlabr() {
@@ -26,7 +26,7 @@ function Patientlabr() {
 
     return (
         <div>
-            <Header/>
+            <Sidebarlab/>
             
             {/* ======= Why Us Section ======= */}
 
