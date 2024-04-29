@@ -46,14 +46,15 @@ const Register = () => {
       if (emailMatchingArray.length > 0) {
         alert("This Email Address Already Existed");
       } else {
+        createUserWithEmailAndPassword(auth, email, password)
         await addDoc(dbref, { Email: email, Username: username, Password: password, Age: age, Dob: dob, Gender: gender, Address: address, ContactNumber: contactNumber, Allergies: allergies });
         alert('Registered Successful');
         navigate('/Login'); // Navigate to Home page after successful registration
       }
     } catch (error) {
       alert(error);
-    }
-  };
+    }
+  };
 
   // Example registration function
   // const handleRegistration = async (email, password) => {
