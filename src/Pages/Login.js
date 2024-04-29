@@ -60,7 +60,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
-    navigate("/")
+    navigate("/Profile")
   })
   .catch((error) => {
     setError(true);

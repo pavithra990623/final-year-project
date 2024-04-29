@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../components/Header';
+// import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { db } from '../firebase.Config'; // Import Firebase Firestore instance
 import Sidebarlab from "../components/Sidebarlab";
@@ -27,6 +27,8 @@ function Patientlabr() {
     return (
         <div>
             <Sidebarlab/>
+
+        <p>THe details of the Patients</p>
             
             {/* ======= Why Us Section ======= */}
 
