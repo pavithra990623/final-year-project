@@ -271,3 +271,63 @@ section {
   
   /* Header and Footer styles (assuming you have separate CSS files for them) */
   
+  @media (max-width: 768px) {
+    #hero {
+      margin-bottom: -150px; /* Decrease margin bottom for smaller screens */
+    }
+  
+    #hero h1 {
+      font-size: 36px; /* Decrease font size for smaller screens */
+      line-height: 44px; /* Adjust line height for smaller screens */
+    }
+  
+    #hero h2 {
+      font-size: 20px; /* Decrease font size for smaller screens */
+      margin-top: 20px; /* Increase margin top for smaller screens */
+    }
+  
+    #hero .btn-get-started {
+      font-size: 12px; /* Decrease font size for smaller screens */
+      padding: 8px 20px; /* Decrease padding for smaller screens */
+      margin-top: 20px; /* Decrease margin top for smaller screens */
+    }
+  
+    .icon-img {
+      width: 80%; /* Decrease image width for smaller screens */
+      height: auto; /* Adjust height accordingly */
+    }
+  
+    p1 {
+      font-size: 24px; /* Decrease font size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    #hero {
+      margin-bottom: 0;
+      height: auto; /* Change height to auto for smaller screens */
+      min-height: 300px; /* Adjust minimum height for smaller screens */
+    }
+  
+    #hero .container {
+      padding-bottom: 30px; /* Decrease padding bottom for smaller screens */
+    }
+  
+    #hero h1 {
+      font-size: 32px; /* Decrease font size for smaller screens */
+      line-height: 40px; /* Adjust line height for smaller screens */
+    }
+  
+    #hero h2 {
+      font-size: 18px; /* Decrease font size for smaller screens */
+      line-height: 22px; /* Adjust line height for smaller screens */
+      margin-bottom: 20px; /* Decrease margin bottom for smaller screens */
+    }
+  }
+  
+  @media (max-height: 600px) {
+    #hero {
+      height: 110vh; /* Adjust height for smaller screens */
+    }
+  }
+  

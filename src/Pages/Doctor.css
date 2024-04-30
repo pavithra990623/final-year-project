@@ -101,3 +101,43 @@
     transition: 0.5s;
   }
  
+  @media screen and (max-width: 768px) {
+    .doctors .member {
+      padding: 20px; /* Decrease padding for smaller screens */
+    }
+  
+    .doctors .member .pic {
+      width: 120px; /* Decrease image width for smaller screens */
+    }
+  
+    .doctors .member .member-info {
+      padding-left: 20px; /* Decrease padding for smaller screens */
+    }
+  
+    .doctors .member h4 {
+      font-size: 18px; /* Decrease font size for smaller screens */
+    }
+  
+    .doctors .member span {
+      font-size: 14px; /* Decrease font size for smaller screens */
+    }
+  
+    .doctors .member span::after {
+      width: 30px; /* Decrease line width for smaller screens */
+    }
+  
+    .doctors .member p {
+      font-size: 12px; /* Decrease font size for smaller screens */
+    }
+  
+    .doctors .member .social a {
+      width: 28px; /* Decrease social icon size for smaller screens */
+      height: 28px;
+    }
+  
+    .button5 {
+      padding: 6px 10px; /* Decrease button padding for smaller screens */
+      font-size: 14px; /* Decrease font size for smaller screens */
+      margin-top: 20px; /* Decrease margin top for smaller screens */
+    }
+  }
