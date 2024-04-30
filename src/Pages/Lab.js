@@ -51,7 +51,7 @@ const Lab = () => {
       {/* <Header /> */}
       <Sidebarlab />
       <div className="lab-container">
-        <h3>Add New Report</h3>
+        <h3>Add New Report </h3>
         <form>
           <label>
             Patient Name
@@ -63,8 +63,9 @@ const Lab = () => {
           </label>
           <br />
 
+
           <label>
-            Report Type
+            Report
             <input
               type="text"
               value={newReport.reportType}

@@ -20,7 +20,7 @@ const ImageUpload = () => {
     console.log(formData);
 
     try {
-      const response = await axios.post('http://localhost:5000/upload', formData, {
+      const response = await axios.post('http://localhost:3001/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -55,6 +55,7 @@ const ImageUpload = () => {
   return (
     <div>
       <Header />
+      <h1>Test Results</h1><br></br>
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload</button>
       {ocrResult && (

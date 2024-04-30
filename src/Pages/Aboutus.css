@@ -193,3 +193,25 @@
   font-family: "Raleway", sans-serif;
   font-size: 14px;
 }
+
+@media screen and (max-width: 768px) {
+  .about .icon-box {
+    margin-top: 20px; /* Adjust margin top for smaller screens */
+  }
+
+  .about .icon-box .icon {
+    width: 48px; /* Decrease icon size for smaller screens */
+    height: 48px; 
+    border-width: 1px; /* Decrease border width for smaller screens */
+  }
+
+  .about .icon-box .title {
+    margin-left: 0; /* Reset margin for smaller screens */
+    text-align: center; /* Center align title for smaller screens */
+  }
+
+  .about .icon-box .description {
+    margin-left: 0; /* Reset margin for smaller screens */
+    text-align: center; /* Center align description for smaller screens */
+  }
+}

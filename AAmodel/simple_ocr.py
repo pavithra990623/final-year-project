@@ -1,51 +1,75 @@
+import os
 from flask import Flask, request, jsonify
 from PIL import Image
 import pytesseract
 import cv2
 import numpy as np
-import io  # Import io module for BytesIO
+import io
 import firebase_admin
 from firebase_admin import credentials, firestore
 from flask_cors import CORS
-import io
+import uuid
+import magic  # Import magic for file type validation
 
-
+# Initialize Flask app
 app = Flask(__name__)
 CORS(app)
 
 # Initialize Firebase Admin SDK
-cred = credentials.Certificate(r"D:\year3\A-individual project\final-year-project\login-c057b-firebase-adminsdk-yiql7-bb06c12b37.json")
+cred = credentials.Certificate(r"C:\Users\rasan\Downloads\login-c057b-firebase-adminsdk-yiql7-33d582380a.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-# Update the path below to where Tesseract is installed on your system
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+# Get Tesseract path from environment variable or use default value
+TESSERACT_PATH = os.getenv('TESSERACT_PATH', r'C:\Program Files\Tesseract-OCR\tesseract.exe')
+pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
+
+def parse_ocr_text(ocr_text):
+    parsed_data = {}
+    lines = ocr_text.split('\n')
+    for line in lines:
+        if line.strip().startswith('TOTAL WHITE CELL COUNT'):
+            parsed_data['TOTAL_WHITE_CELL_COUNT'] = float(line.split()[-1])
+        elif line.strip().startswith('NEUTROPHILS'):
+            parsed_data['NEUTROPHILS'] = float(line.split()[-1])
+        # Add more conditions to parse other data points as needed
+    return parsed_data
 
 @app.route('/upload', methods=['POST'])
+
 def upload_image():
+    # Check if request contains image file
     if 'image' not in request.files:
         return jsonify({'error': 'No image uploaded'}), 400
 
-    image = request.files['image']
+    image = request.files.get('image')
+
+    # Validate image file
+    if not is_valid_image(image):
+        return jsonify({'error': 'Invalid image file'}), 400
+
     image_bytes = image.read()
 
     # Process the image using OCR
     ocr_result = process_image(image_bytes)
 
+    # Generate a unique ID for the Firestore document
+    doc_id = str(uuid.uuid4())
+
     # Send OCR result to Firebase
-    doc_ref = db.collection(u'ocr_results').document(image.filename)
+    doc_ref = db.collection(u'ocr_results').document(doc_id)
     doc_ref.set({
         u'text': ocr_result
     })
-    
 
-    # Add OCR result to Firestore collection (optional)
-    # Assuming you have Firebase Admin initialized and db variable available
-    doc_ref = db.collection(u'ocr_results').add({
-    u'text': ocr_result
-})
+    return jsonify({'doc_id': doc_id, 'text': ocr_result})
 
-    return jsonify({'text': ocr_result})
+def is_valid_image(image):
+    # Validate file type using magic
+    mime_type = magic.from_buffer(image.stream.read(1024), mime=True)
+    if mime_type.startswith('image'):
+        return True
+    return False
 
 def process_image(image_bytes):
     # Convert image bytes to PIL Image
