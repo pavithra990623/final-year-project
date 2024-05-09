@@ -1,0 +1,143 @@
+.doctors {
+    background: #fff;
+  }
+  
+  .doctors .member {
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(44, 73, 100, 0.08);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .doctors .member .pic {
+    overflow: hidden;
+    width: 180px;
+    border-radius: 50%;
+  }
+  
+  .doctors .member .pic img {
+    transition: ease-in-out 0.3s;
+  }
+  
+  .doctors .member:hover img {
+    transform: scale(1.1);
+  }
+  
+  .doctors .member .member-info {
+    padding-left: 30px;
+  }
+  
+  .doctors .member h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #2c4964;
+  }
+  
+  .doctors .member span {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+  }
+  
+  .doctors .member span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #a2bcd3;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .doctors .member p {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+  }
+  
+  .doctors .member .social {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .doctors .member .social a {
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    background: #14324c;
+  }
+  
+  .doctors .member .social a i {
+    color: #cbc0c0;
+    font-size: 16px;
+    margin: 0 2px;
+  }
+  
+  .doctors .member .social a:hover {
+    background: #1977cc;
+  }
+  
+  .doctors .member .social a+a {
+    margin-left: 8px;
+  }
+  .button5 {
+    background-color: #0d510b;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+  }
+ 
+  @media screen and (max-width: 768px) {
+    .doctors .member {
+      padding: 20px; /* Decrease padding for smaller screens */
+    }
+  
+    .doctors .member .pic {
+      width: 120px; /* Decrease image width for smaller screens */
+    }
+  
+    .doctors .member .member-info {
+      padding-left: 20px; /* Decrease padding for smaller screens */
+    }
+  
+    .doctors .member h4 {
+      font-size: 18px; /* Decrease font size for smaller screens */
+    }
+  
+    .doctors .member span {
+      font-size: 14px; /* Decrease font size for smaller screens */
+    }
+  
+    .doctors .member span::after {
+      width: 30px; /* Decrease line width for smaller screens */
+    }
+  
+    .doctors .member p {
+      font-size: 12px; /* Decrease font size for smaller screens */
+    }
+  
+    .doctors .member .social a {
+      width: 28px; /* Decrease social icon size for smaller screens */
+      height: 28px;
+    }
+  
+    .button5 {
+      padding: 6px 10px; /* Decrease button padding for smaller screens */
+      font-size: 14px; /* Decrease font size for smaller screens */
+      margin-top: 20px; /* Decrease margin top for smaller screens */
+    }
+  }

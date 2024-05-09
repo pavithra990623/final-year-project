@@ -1,0 +1,116 @@
+/*Lab.css*/
+
+.lab-container {
+    margin-top: 50px;
+  }
+  
+  .lab-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .lab-table th,
+  .lab-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .lab-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .lab-container form {
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  .lab-container form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .lab-container form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .lab-container form button {
+    background-color: #030366;
+    color: #fff;
+    padding: 10px 180px;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+
+  }
+  
+  .lab-container form button:hover {
+    background-color: #0471a7;
+  }
+  
+
+/* add update buttons */
+
+.lab-container .lab-table td button1 {
+    background-color: #0d510b;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+  }
+  
+  .lab-container .lab-table td button1:hover {
+    background-color: #12b703;
+  }
+  
+  .lab-container .lab-table td button1:last-child {
+    margin-right: 0;
+  }
+  
+  .lab-container .lab-table td button1.delete {
+    background-color: #35dc3b;
+  }
+  
+  .lab-container .lab-table td button1.delete:hover {
+    background-color: #23c849;
+  }
+  
+
+  .lab-container .lab-table td button2 {
+    background-color: #d70404;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+  }   
+  .lab-container .lab-table td button2:hover {
+    background-color: #710202;
+  }
+  
+  .lab-container .lab-table td button2:last-child {
+    margin-right: 0;
+  }
+  
+  .lab-container .lab-table td button2.delete {
+    background-color: #f70b0b;
+  }
+  
+  .lab-container .lab-table td button2.delete:hover {
+    background-color: #23c836;
+  }
+  
+
+

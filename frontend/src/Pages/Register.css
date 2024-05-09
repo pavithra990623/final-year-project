@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} */
+
+body {
+  height: 100vh;
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  padding: 10px;
+  /* background: linear-gradient(135deg, #989fa3, #b9c9d5); */
+}
+
+.rcontainer {
+  /* display: flex; */
+  /* justify-content: center; */
+  max-width: 100%;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.rcontainer .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.rcontainer .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #060d38);
+}
+
+.form-rcontainer form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+.form-rcontainer form .form-row .form-col {
+  margin-bottom: 15px;
+  width: calc(50% - 20px);
+}
+
+.form-rcontainer form label span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-rcontainer form input[type="text"],
+.form-rcontainer form input[type="email"],
+.form-rcontainer form input[type="password"],
+.form-rcontainer form input[type="date"],
+.form-rcontainer form select {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  /* border-bottom-width: 2px; */
+  transition: all 0.3s ease;
+}
+
+.form-rcontainer form input:focus,
+.form-rcontainer form input:valid,
+.form-rcontainer form select:focus,
+.form-rcontainer form select:valid {
+  border-color: #03023c;
+}
+
+.form-rcontainer form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+
+.form-rcontainer form .button button {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #0c0630, #060a40);
+}
+
+.form-rcontainer form .button button:hover {
+  background: linear-gradient(-135deg, #06314d, #040533);
+}
+
+.form-rcontainer h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.form-rcontainer input[type="file"] {
+  margin-top: 10px;
+}

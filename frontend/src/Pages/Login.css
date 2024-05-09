@@ -1,0 +1,46 @@
+/* Login.css */
+
+.logcontainer {
+    margin-top: 50px;
+  }
+  
+  .form-logcontainer {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  select,
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    
+  }
+  
+  button {
+    background-color: #030366;
+    color: #fff;
+    padding: 10px 180px;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+  }
+  
+  button:hover {
+    background-color: #0471a7;
+  }
+  
+  /* Header and Footer styles (assuming you have separate CSS files for them) */
+  
