@@ -1,0 +1,48 @@
+/* Patientlabr.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .patient {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .icon-box1 {
+    flex: 1;
+    max-width: 90000px; /* Adjust max-width as needed */
+    height: 250px;
+    margin: 10px; /* Adjust margin as needed */
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    background-color: #D3D3D3;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add box-shadow for a subtle effect */
+  }
+  
+  .icon-box1 i {
+    font-size: 24px; /* Adjust icon size as needed */
+    color: #1977cc; /* Adjust icon color as needed */
+  }
+  
+  .icon-box1 h4 {
+    font-size: 16px; /* Adjust title font size as needed */
+    margin-top: 10px; /* Adjust margin as needed */
+  }
+  
+  .icon-box1 p {
+    font-size: 14px; /* Adjust description font size as needed */
+    color: #848484; /* Adjust text color as needed */
+  }
+  h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+  }
+  p4{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+  }
