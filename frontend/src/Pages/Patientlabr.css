@@ -46,3 +46,9 @@
     font-family: 'Courier New', Courier, monospace;
     color: black;
   }
+  /* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .icon-box1 {
+    max-width: calc(100% - 20px); /* Adjust max-width for smaller screens */
+  }
+}

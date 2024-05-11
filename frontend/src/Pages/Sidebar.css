@@ -58,3 +58,18 @@
   }
   
   /* End Sidebar  */
+
+  /* Make the sidebar responsive */
+@media screen and (max-width: 768px) {
+  #sidebar {
+      display: none;
+  }
+
+  .sidebar-responsive {
+      display: inline-block !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 12;
+  }
+}
