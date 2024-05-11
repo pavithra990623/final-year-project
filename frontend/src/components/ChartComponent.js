@@ -1,8 +1,10 @@
 // ChartComponent.jsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Chart from 'chart.js/auto';
 
 const ChartComponent = ({ chartData }) => {
+  const [chartType, setChartType] = useState('bar');
+  
   useEffect(() => {
     if (!chartData) return; // Early return if chartData is null or undefined
 
