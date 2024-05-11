@@ -8,8 +8,11 @@ import cv2
 import numpy as np
 import firebase_admin
 from firebase_admin import credentials, firestore
+from flask_cors import CORS  # Import CORS from flask_cors
 
+# Your existing code...
 app = Flask(__name__)
+CORS(app)  # Add this line to enable CORS for your Flask app
 
 # Initialize Firebase Admin SDK
 cred = credentials.Certificate(r"config/login-c057b-firebase-adminsdk-yiql7-bb06c12b37.json")

@@ -14,18 +14,20 @@ const ImageUpload = () => {
 
   const handleUpload = async () => {
     const formData = new FormData();
-    formData.append('image', selectedFile);
+    formData.append('file', selectedFile);
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:3001/upload', formData, {
+      const response = await axios.post('http://localhost:5000/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
 
+      console.log(response.data);
+
       // Set OCR result in state
-      setOcrResult(response.data.text);
+      // setOcrResult(response.data.text);
     } catch (error) {
       console.error('Error uploading image:', error);
     } finally {
