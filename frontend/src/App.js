@@ -24,6 +24,7 @@ import Details from "./Pages/Details";
 import Edituser from "./Pages/Edituser";
 import Lablogin from "./Pages/Lablogin";
 import Manualmes from "./Pages/Manualmes";
+import ChartComponent from "./Pages/ChartComponent";
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
 
@@ -112,7 +113,9 @@ function App() {
 
              {/*Calender*/}
              <Route path="/Manualmes" element={<Manualmes/>} />
-
+             
+              {/*Calender*/}
+              <Route path="/ChartComponent" element={<ChartComponent/>} />
 
         </Routes>
       </BrowserRouter>

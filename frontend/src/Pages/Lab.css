@@ -112,5 +112,14 @@
     background-color: #23c836;
   }
   
-
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .lab-container form button {
+    padding: 10px 50px; /* Adjusted padding for smaller screens */
+  }
+  
+  .lab-container .lab-table td button {
+    padding: 8px 8px; /* Adjusted padding for smaller screens */
+  }
+}
 

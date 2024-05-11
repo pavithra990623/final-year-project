@@ -374,4 +374,19 @@ button9 {
   .update-profile-button:hover {
     background-color: #08182a;
   }
-  
+  /* Add media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .card-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust cardprofile width for smaller screens */
+  .cardprofile,
+  .cardprofile2,
+  .cardprofile3,
+  .cardprofile4,
+  .cardprofile5 {
+    width: 80%;
+  }
+}

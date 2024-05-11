@@ -41,6 +41,10 @@
   button:hover {
     background-color: #0471a7;
   }
-  
-  /* Header and Footer styles (assuming you have separate CSS files for them) */
-  
+  /* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  /* Adjust button padding for smaller screens */
+  button {
+    padding: 10px 50px;
+  }
+}
