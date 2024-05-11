@@ -1,0 +1,47 @@
+/* ImageUpload.css */
+
+.image-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-upload-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.image-upload-container input[type="file"] {
+  margin-bottom: 20px;
+}
+
+.image-upload-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.image-upload-container button:hover {
+  background-color: #0056b3;
+}
+
+.image-upload-container p {
+  margin: 10px 0;
+}
+
+.image-upload-container .chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.image-upload-container .chart-container canvas {
+  width: 100%;
+  height: auto;
+}

@@ -4,7 +4,7 @@ import Chart from 'chart.js/auto';
 
 const ChartComponent = ({ chartData }) => {
   const [chartType, setChartType] = useState('bar');
-  
+
   useEffect(() => {
     if (!chartData) return; // Early return if chartData is null or undefined
 
@@ -32,7 +32,7 @@ const ChartComponent = ({ chartData }) => {
         }
       }
     });
-  }, [chartData]); // Include chartData in the dependency array
+  }, [chartData,]); // Include chartData in the dependency array
 
   return <canvas id="myChart" width="400" height="400"></canvas>;
 };
