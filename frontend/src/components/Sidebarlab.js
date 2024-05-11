@@ -25,15 +25,15 @@ const Sidebarlab = ({ openSidebarlab }) => {
           </Link>
         </li>
         <li className='sidebarl-list-item'>
-          <Link to="/Profile">
-            Profile
+          <Link to="/lab">
+            Upload
           </Link>  
         </li>
-        <li className='sidebarl-list-item'>
-          <Link to="/Home">
+        {/* <li className='sidebarl-list-item'>
+          <Link to="/Lablogin">
             Home
           </Link>  
-        </li>
+        </li> */}
       </ul>
     </aside>
   );

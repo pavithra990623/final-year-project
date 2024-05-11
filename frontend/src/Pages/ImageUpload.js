@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
-import { Bar } from 'react-chartjs-2';
+import './ImageUpload.css'
 
 const ImageUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [ocrResult, setOcrResult] = useState('');
-  const [chartData, setChartData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -16,10 +16,8 @@ const ImageUpload = () => {
     const formData = new FormData();
     formData.append('image', selectedFile);
 
-    // Log the FormData object to the console
-    console.log(formData);
-
     try {
+      setLoading(true);
       const response = await axios.post('http://localhost:3001/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -30,27 +28,24 @@ const ImageUpload = () => {
       setOcrResult(response.data.text);
     } catch (error) {
       console.error('Error uploading image:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleAnalyse = () => {
-    // Split the OCR result string into an array of numbers
-    const numbers = ocrResult.split(',').map(Number);
+  const handleStoreData = async () => {
+    try {
+      setLoading(true);
+      // Send OCR result to backend to store in Firebase
+      const response = await axios.post('http://localhost:3001/store-data', { ocrResult });
 
-    // Set chart data
-    setChartData({
-      labels: numbers.map((_, index) => `Value ${index + 1}`), // Label each value with an index
-      datasets: [
-        {
-          label: 'OCR Data',
-          data: numbers,
-          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1,
-        },
-      ],
-    });
-};
+      console.log('Data stored in Firebase:', response.data);
+    } catch (error) {
+      console.error('Error storing data in Firebase:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div>
@@ -59,24 +54,13 @@ const ImageUpload = () => {
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload</button>
       {ocrResult && (
-        <button onClick={handleAnalyse}>Analyse</button>
+        <div>
+          <h2>OCR Result:</h2>
+          <p>{ocrResult}</p>
+          <button onClick={handleStoreData}>Store Data in Firebase</button>
+        </div>
       )}
-      <div>
-        {ocrResult && (
-          <div>
-            <h2>OCR Result:</h2>
-            <p>{ocrResult}</p>
-          </div>
-        )}
-      </div>
-      <div>
-        {chartData && (
-          <div>
-            <h2>Chart</h2>
-            <Bar data={chartData} />
-          </div>
-        )}
-      </div>
+      {loading && <p>Loading...</p>}
     </div>
   );
 };

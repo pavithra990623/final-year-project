@@ -105,6 +105,10 @@ const Register = () => {
                   <span>Age:</span>
                   <input type="text" value={age} onChange={(e) => setAge(e.target.value)} />
                 </label>
+                <label>
+                  <span>Allergies:</span>
+                  <input type="text" value={allergies} onChange={(e) => setAllergies(e.target.value)} />
+                </label>
               </div>
               <div className="form-col">
                 <label>
@@ -130,24 +134,21 @@ const Register = () => {
                 <label>
                   <span>NIC:</span>
                   <input type="text" value={nic} onChange={(e) => setNic(e.target.value)} />
-                </label>
-                <label>
-                  <span>Allergies:</span>
-                  <input type="text" value={allergies} onChange={(e) => setAllergies(e.target.value)} />
-                </label>
-                
+                </label>               
               </div>
             </div>
-            <button type="button" onClick={handleRegister}>Register</button>
-<br></br><br></br><br></br>
-          </form>
 
-          
-          <h3>The image of Medical Records; If have any</h3>
-          <input type="file" onChange={(e) => setImg(e.target.files[0])} />
-          <br></br>
-          <button onClick={handleClick}>Upload</button>
-          <br></br>
+            
+            </form> 
+            <div className="button-container">
+              <button type="button" onClick={handleRegister}>Register</button>
+                <br></br><br></br><br></br>           
+                  <h3>The image of Medical Records; If have any</h3>
+                      <input type="file" onChange={(e) => setImg(e.target.files[0])} />
+                  <br></br>
+               <button onClick={handleClick}>Upload</button>
+                   <br></br>
+            </div>
         </div>
       </div>
 
