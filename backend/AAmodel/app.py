@@ -82,7 +82,7 @@ def generate_chart():
     # Now call the function to analyze the image and generate chart data
     chart_data = analyze_image(file_path)
 
-    return render_template('chart.html', chart_data=chart_data)
+    return render_template('chart.html', chart_data=chart_data, filename=filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
