@@ -24,7 +24,7 @@ import Details from "./Pages/Details";
 import Edituser from "./Pages/Edituser";
 import Lablogin from "./Pages/Lablogin";
 import Manualmes from "./Pages/Manualmes";
-import ChartComponent from "./Pages/ChartComponent";
+import ChartComponent from "./components/ChartComponent";
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
 
