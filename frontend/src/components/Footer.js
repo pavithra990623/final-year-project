@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="container">
             <div className="row">
                 <div className="col-md-6 col-lg-5 col-12 ft-1">
-                    <h3><span>MedRecord </span>KEEPER</h3>
-                    <p>We are providing a space to store your all the medical records in one place.<br></br>Now your lab reports, medical history and vaccination details are really safe with us.<br></br>Join us & have the experience !!!</p>
+                    <h3><span>MediLab</span></h3>
+                    <p>We are providing a space to store your all the medical records in one placen and Join with us to have the experience !!!</p>
                     <div className="footer-icons">
                         <i class="fa-brands fa-facebook"></i>
                         <i class="fa-brands fa-twitter"></i>
@@ -27,12 +27,6 @@ export default function Footer() {
                             <a className="" href="/">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="" href="/">Lab</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="" href="/">Profile</a>
-                        </li>
-                        <li className="nav-item">
                             <a className="" href="/">Register</a>
                         </li>
                     </ul>
@@ -40,8 +34,7 @@ export default function Footer() {
                 <div className="col-md-6 col-lg-4 col-12 ft-3">
                     <h5>Contact Us With</h5>
                     <p><i class="fa-solid fa-phone-volume"></i> +94 11 345 678 9</p>
-                    <p><i class="fa-solid fa-envelope"></i> MedRecordKEEPER@gmail.com</p>
-                    <p><i class="fa-solid fa-paper-plane"></i> Departmant of Health, Sri Lanaka.</p>
+                    <p><i class="fa-solid fa-envelope"></i> MediLab@gmail.com</p>
                 </div>
             </div>
         </div>

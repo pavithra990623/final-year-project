@@ -4,6 +4,9 @@ import Footer from '../components/Footer';
 import { db, auth } from '../firebase.Config';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill } from 'react-icons/bs';
+import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
+import './Profile.css';
 
 function Profile() {
   const [userDetails, setUserDetails] = useState(null);
@@ -22,7 +25,7 @@ function Profile() {
         if (userDoc.exists()) {
           setUserDetails(userDoc.data());
         } else {
-          setError('No user data found.');
+          setError('Details');
         }
       } catch (error) {
         console.error('Error fetching user data:', error);
@@ -81,6 +84,10 @@ function Profile() {
     navigate('/imageupload');
   };
 
+  const handleNavigateToDetails = () => {
+    navigate('/details');
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -108,9 +115,39 @@ function Profile() {
           <p>No user data available.</p>
         )}
 
-        <button type="button" onClick={handleUpdateProfile}>Update Profile</button>
-        <button type="button" onClick={handleLogout}>Logout</button>
-        <button type="button" onClick={handleNavigateToImageUpload}>Veiw My Lab Result</button>
+        <div className='card-row'>
+        <div className='cardprofile'>
+  <div className='card-innerprofile'>
+    <h3>CATEGORIES</h3>
+    <BsFillGrid3X3GapFill className='card_icon' />
+  </div>
+  <h1>12</h1>
+  <button9 type="button" onClick={handleNavigateToDetails}>Update Profile</button9>
+</div>
+
+
+<div className='cardprofile2'>
+  <div className='card-innerprofile2'>
+    <h3>CATEGORIES</h3>
+    <BsFillGrid3X3GapFill className='card_icon' />
+  </div>
+  <h1>12</h1>
+  <button9 type="button" onClick={handleLogout}>Logout</button9>
+</div>
+
+<div className='cardprofile3'>
+  <div className='card-innerprofile3'>
+    <h3>CATEGORIES</h3>
+    <BsFillGrid3X3GapFill className='card_icon' />
+  </div>
+  <h1>12</h1>
+  <button9 type="button" onClick={handleNavigateToImageUpload}>Veiw My Lab Result</button9>
+</div>
+</div>
+
+        {/* <button9 type="button" onClick={handleUpdateProfile}>Update Profile</button9> */}
+        {/* <button type="button" onClick={handleLogout}>Logout</button> */}
+        {/* <button type="button" onClick={handleNavigateToImageUpload}>Veiw My Lab Result</button> */}
       </div>
       <br></br>
       <Footer />

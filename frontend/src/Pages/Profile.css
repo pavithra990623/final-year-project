@@ -54,3 +54,220 @@ button6 {
     margin: 0 auto; /* Center the chart container */
   }
   
+  .cardprofile {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  }
+  .card-innerprofile {
+    text-align: center;
+  }
+  
+  .card-innerprofile h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card_icon {
+    font-size: 36px;
+    color: #0a0b0d; /* Change color as needed */
+  }
+  
+  .cardprofile h1 {
+    font-size: 48px;
+    color: #333;
+    margin-top: 20px;
+  }
+  .cardprofile:nth-child(3) {
+    background-color: #2e7d32;
+  }  
+/* 2 */
+
+.cardprofile2 {
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    }
+    .card-innerprofile2 {
+      text-align: center;
+    }
+    
+    .card-innerprofile2 h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    
+    .card_icon {
+      font-size: 36px;
+      color: #0a0b0d; /* Change color as needed */
+    }
+    
+    .cardprofile2 h1 {
+      font-size: 48px;
+      color: #333;
+      margin-top: 20px;
+    }
+    .cardprofile2:nth-child(4) {
+      background-color: #811111;
+    }  
+  
+
+    /* 2 */
+
+.cardprofile3 {
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    }
+    .card-innerprofile3 {
+      text-align: center;
+    }
+    
+    .card-innerprofile3 h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    
+    .card_icon {
+      font-size: 36px;
+      color: #0a0b0d; /* Change color as needed */
+    }
+    
+    .cardprofile3 h1 {
+      font-size: 48px;
+      color: #333;
+      margin-top: 20px;
+    }
+    .cardprofile3:nth-child(5) {
+      background-color: #dfcc23;
+    }  
+  
+
+/* Add this CSS to your existing Home.css or create a new CSS file */
+
+/* Style for the button9 */
+button9 {
+    background-color: #0c0651;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button9:hover {
+    background-color: #091e35;
+  }
+  
+  /*  */
+  /* Profile.css */
+
+.profile-container {
+    text-align: center;
+  }
+  
+  .card-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .cardprofile{
+    width: 200px;
+    height: 200px;
+    background-color: #2e7d32;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .cardprofile2{
+    width: 200px;
+    height: 200px;
+    background-color: #811111;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .cardprofile3 {
+    width: 200px;
+    height: 200px;
+    background-color: #dfcc23;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cardprofile h1,
+  .cardprofile2 h1,
+  .cardprofile3 h1 {
+    font-size: 36px;
+    color: #333;
+  }
+  
+  .card-innerprofile,
+  .card-innerprofile2,
+  .card-innerprofile3 {
+    text-align: center;
+  }
+  
+  .card_innerprofile h3,
+  .card_innerprofile2 h3,
+  .card_innerprofile3 h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card_icon {
+    font-size: 36px;
+    color: #030507;
+  }
+  
+  .update-profile-button {
+    background-color: #081d34;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .update-profile-button:hover {
+    background-color: #08182a;
+  }
+  

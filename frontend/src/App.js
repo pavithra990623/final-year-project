@@ -20,6 +20,9 @@ import Dashboard from "./Pages/Dashboard";
 import Sidebar from "./Pages/Sidebar";
 import AppointmentBookingPage from "./Pages/AppointmentBookingPage";
 import Calendar from "./components/Calendar";
+import Details from "./Pages/Details";
+import Edituser from "./Pages/Edituser";
+import Lablogin from "./Pages/Lablogin";
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
 
@@ -96,6 +99,15 @@ function App() {
            
            {/*Calender*/}
            <Route path="/Calender" element={<Calendar/>} />
+
+           {/*Calender*/}
+           <Route path="/Details" element={<Details/>} />
+
+             {/*Calender*/}
+             <Route path="/Edituser" element={<Edituser/>} />
+
+             {/*Calender*/}
+             <Route path="/Lablogin" element={<Lablogin/>} />
 
 
         </Routes>
