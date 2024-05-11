@@ -203,6 +203,44 @@ button6 {
   .cardprofile4:nth-child(6) {
     background-color: #67079b;
   }  
+
+   /* 5 */
+
+.cardprofile5 {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  }
+  .card-innerprofile5 {
+    text-align: center;
+  }
+  
+  .card-innerprofile5 h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card_icon {
+    font-size: 36px;
+    color: #0a0b0d; /* Change color as needed */
+  }
+  
+  .cardprofile5 h1 {
+    font-size: 48px;
+    color: #333;
+    margin-top: 20px;
+  }
+  .cardprofile5:nth-child(7) {
+    background-color: #67079b;
+  }  
   
 
 /* Add this CSS to your existing Home.css or create a new CSS file */
@@ -279,11 +317,23 @@ button9 {
     align-items: center;
     justify-content: center;
   }
+  .cardprofile5 {
+    width: 200px;
+    height: 200px;
+    background-color: #05a9ce;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   
   .cardprofile h1,
   .cardprofile2 h1,
   .cardprofile3 h1
-  .cardprofile4 h1 {
+  .cardprofile4 h1
+  .cardprofile5 h1 {
     font-size: 36px;
     color: #333;
   }
@@ -291,14 +341,16 @@ button9 {
   .card-innerprofile,
   .card-innerprofile2,
   .card-innerprofile3,
-  .card-innerprofile4 {
+  .card-innerprofile4,
+  .card-innerprofile5 {
     text-align: center;
   }
   
   .card_innerprofile h3,
   .card_innerprofile2 h3,
   .card_innerprofile3 h3,
-  .card_innerprofile3 h4 {
+  .card_innerprofile3 h4,
+  .card_innerprofile3 h5 {
     font-size: 18px;
     color: #333;
     margin-bottom: 10px;

@@ -122,39 +122,48 @@ function Profile() {
         <div className='card-row'>
         <div className='cardprofile'>
   <div className='card-innerprofile'>
-    <h3>CATEGORIES</h3>
+    <h3>UPDATE</h3>
     <BsFillGrid3X3GapFill className='card_icon' />
   </div>
-  <h1>12</h1>
+  <h1>01</h1>
   <button9 type="button" onClick={handleNavigateToDetails}>Update Profile</button9>
 </div>
 
 
 <div className='cardprofile2'>
   <div className='card-innerprofile2'>
-    <h3>CATEGORIES</h3>
+    <h3>LOGOUT</h3>
     <BsFillGrid3X3GapFill className='card_icon' />
   </div>
-  <h1>12</h1>
+  <h1>02</h1>
   <button9 type="button" onClick={handleLogout}>Logout</button9>
 </div>
 
 <div className='cardprofile3'>
   <div className='card-innerprofile3'>
-    <h3>CATEGORIES</h3>
+    <h3>VIEW REPORT</h3>
     <BsFillGrid3X3GapFill className='card_icon' />
   </div>
-  <h1>12</h1>
+  <h1>03</h1>
   <button9 type="button" onClick={handleNavigateToImageUpload}>Veiw My Lab Result</button9>
 </div>
 
 <div className='cardprofile4'>
   <div className='card-innerprofile4'>
-    <h3>CATEGORIES</h3>
+    <h3>MANUAL</h3>
     <BsFillGrid3X3GapFill className='card_icon' />
   </div>
-  <h1>12</h1>
+  <h1>04</h1>
   <button9 type="button" onClick={handleNavigateToManualmes}>Mannual Mesurement</button9>
+</div>
+
+<div className='cardprofile5'>
+  <div className='card-innerprofile5'>
+    <h3>LAB</h3>
+    <BsFillGrid3X3GapFill className='card_icon' />
+  </div>
+  <h1>05</h1>
+  <button9 type="button" onClick={handleNavigateToManualmes}>Lab</button9>
 </div>
 
 </div>
