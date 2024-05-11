@@ -23,6 +23,7 @@ import Calendar from "./components/Calendar";
 import Details from "./Pages/Details";
 import Edituser from "./Pages/Edituser";
 import Lablogin from "./Pages/Lablogin";
+import Manualmes from "./Pages/Manualmes";
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
 
@@ -108,6 +109,9 @@ function App() {
 
              {/*Calender*/}
              <Route path="/Lablogin" element={<Lablogin/>} />
+
+             {/*Calender*/}
+             <Route path="/Manualmes" element={<Manualmes/>} />
 
 
         </Routes>

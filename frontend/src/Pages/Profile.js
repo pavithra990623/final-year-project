@@ -88,6 +88,10 @@ function Profile() {
     navigate('/details');
   };
 
+  const handleNavigateToManualmes = () => {
+    navigate('/manualmes');
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -143,6 +147,16 @@ function Profile() {
   <h1>12</h1>
   <button9 type="button" onClick={handleNavigateToImageUpload}>Veiw My Lab Result</button9>
 </div>
+
+<div className='cardprofile4'>
+  <div className='card-innerprofile4'>
+    <h3>CATEGORIES</h3>
+    <BsFillGrid3X3GapFill className='card_icon' />
+  </div>
+  <h1>12</h1>
+  <button9 type="button" onClick={handleNavigateToManualmes}>Mannual Mesurement</button9>
+</div>
+
 </div>
 
         {/* <button9 type="button" onClick={handleUpdateProfile}>Update Profile</button9> */}

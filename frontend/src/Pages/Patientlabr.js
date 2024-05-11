@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { db } from '../firebase.Config'; // Import Firebase Firestore instance
 import Sidebarlab from "../components/Sidebarlab";
 import './Patientlabr.css';
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 function Patientlabr() {
     const [users, setUsers] = useState([]);
@@ -24,68 +24,62 @@ function Patientlabr() {
         fetchUsers();
     }, []);
 
+    const navigate = useNavigate(); // Define navigate
+
+    const handleNavigateToLab = () => {
+        navigate('/lab');
+    };
+
     return (
         <div>
             <Sidebarlab/>
 
-        <p>THe details of the Patients</p>
+            <p>The details of the Patients</p>
             
-            {/* ======= Why Us Section ======= */}
-
             <div className='containera'>
+                <div className='patient'>
+                    <div className='row'>  
 
-            <div className='patient'>
+                        {/* Iterate over users and render profile data */}
+                        {users.map((user, index) => (
+                            <div className="icon-box1" key={index} style={{ backgroundColor: '#D3D3D3' }}>
+                                <i className="bx bx-receipt"></i>
+                                <h4>{user.Username}</h4>
+                                <p>Email: {user.Email}</p>
+                                <p>Age: {user.Age}</p>
+                                
+                                {/* Add more profile data fields as needed */}
+                            </div>
+                        ))}
 
-            <div className='row'>  
+                        <div className="icon-box1" style={{ backgroundColor: '#D3D3D3' }}>
+                            <i className="bx bx-cube-alt"></i>
+                            <h4>Patient Name : J.M.Jayasinghe </h4><br></br>
+                            <p>Patient ID: AKH2431324 </p>
+                            <button type="button" onClick={handleNavigateToLab}>Add</button>
+                        </div>
 
-                {/* Iterate over users and render profile data */}
-                {users.map((user, index) => (
-                    <div className="icon-box1" key={index} style={{ backgroundColor: '#D3D3D3' }}>
-                        <i className="bx bx-receipt"></i>
-                        <h4>{user.Username}</h4>
-                        <p>Email: {user.Email}</p>
-                        <p>Age: {user.Age}</p>
-                        {/* Add more profile data fields as needed */}
+                        <div className="icon-box1" style={{ backgroundColor: '#D3D3D3' }}>
+                           <i className="bx bx-cube-alt"></i>
+                           <h4>Patient Name:  </h4><br />
+                           <p>Patient ID:  </p>
+                           <button type="button" onClick={handleNavigateToLab}>Add</button>
+                        </div>
+
+                        <div className="icon-box1" style={{ backgroundColor: '#D3D3D3' }}>
+                           <i className="bx bx-cube-alt"></i>
+                           <h4>Patient Name:  </h4><br />
+                           <p>Patient ID:  </p>
+                           <button type="button" onClick={handleNavigateToLab}>Add</button>
+                        </div>
+                        
+                      
+                        {/* Add more icon-box1 divs as needed */}
                     </div>
-                ))}
-              
-                <div className="icon-box1" style={{ backgroundColor: '#D3D3D3' }}>
-                    <i className="bx bx-cube-alt"></i>
-                    <h4>Patient Name : J.M.Jayasinghe </h4><br></br>
-                    <p4>Patient ID: AKH2431324 </p4>
                 </div>
-              
-                <div className="icon-box1" style={{ backgroundColor: '#D3D3D3' }}>
-                    <i className="bx bx-images"></i>
-                    <h4>Name :</h4><br></br>
-                    <p4>Patient ID:</p4>
-                </div>
-
-                <div className="icon-box1" style={{ backgroundColor: '#D3D3D3' }}>
-                    <i className="bx bx-images"></i>
-                    <h4>Name :</h4><br></br>
-                    <p4>Patient ID:</p4>
-                </div>
-
-                <div className="icon-box1" style={{ backgroundColor: '#D3D3D3' }}>
-                    <i className="bx bx-images"></i>
-                    <h4>Name :</h4><br></br>
-                    <p4>Patient ID:</p4>
-                </div>
-
-                <div className="icon-box1" style={{ backgroundColor: '#D3D3D3' }}>
-                    <i className="bx bx-images"></i>
-                    <h4>Name :</h4><br></br>
-                    <p4>Patient ID:</p4>
-                </div>
-              
-                </div>
-            {/* End .content */}
-            </div>
             </div>
           
             <Footer/>
-
         </div>  
     );
 }
