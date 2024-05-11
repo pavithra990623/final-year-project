@@ -27,7 +27,7 @@ const ImageUpload = () => {
       console.log(response.data);
 
       // Set OCR result in state
-      // setOcrResult(response.data.text);
+      setOcrResult(response.data.text);
     } catch (error) {
       console.error('Error uploading image:', error);
     } finally {
