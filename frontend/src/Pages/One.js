@@ -25,6 +25,14 @@ function One() {
             <button style={{ backgroundColor: '#091e35', color: '#fff', padding: '10px 20px', border: 'none', borderRadius: '20px', cursor: 'pointer', transition: 'background-color 0.3s ease' }}>Get Started</button>
           </Link>
         </div>
+        {/* Card for Patient */}
+        <div style={{ border: '5px solid #ccc', padding: '20px', borderRadius: '5px', width: '300px', textAlign: 'center', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', transition: 'box-shadow 0.3s ease' }}>
+          <h2>Doctor</h2>
+          <p>Manage doctor information</p>
+          <Link to="/Doclab">
+            <button style={{ backgroundColor: '#091e35', color: '#fff', padding: '10px 20px', border: 'none', borderRadius: '20px', cursor: 'pointer', transition: 'background-color 0.3s ease' }}>Get Started</button>
+          </Link>
+        </div>
       </div>
       <br />
       <Footer/>
