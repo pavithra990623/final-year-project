@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
+import ChartComponent from '../components/ChartComponent';
 import './ImageUpload.css'
 
 const ImageUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [ocrResult, setOcrResult] = useState('');
   const [loading, setLoading] = useState(false);
+  const [chartData, setChartData] = useState(null);
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -49,6 +51,21 @@ const ImageUpload = () => {
     }
   };
 
+  // for view the chart with mesurements that stored in the db
+  const handleViewChart = async () => {
+    try {
+      setLoading(true);
+      // Fetch chart data from the database
+      const response = await axios.get('http://localhost:3001/get-chart-data');
+      setChartData(response.data);
+    } catch (error) {
+      console.error('Error fetching chart data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  //viwechart end 
+
   return (
     <div>
       <Header />
@@ -63,6 +80,8 @@ const ImageUpload = () => {
         </div>
       )}
       {loading && <p>Loading...</p>}
+      <button onClick={handleViewChart}>View Chart</button>
+      {chartData && <ChartComponent chartData={chartData} />}
     </div>
   );
 };
