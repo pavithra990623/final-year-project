@@ -92,6 +92,10 @@ function Profile() {
     navigate('/manualmes');
   };
 
+  const handleNavigateToLab = () => {
+    navigate('/lab');
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -102,7 +106,7 @@ function Profile() {
       <div className='profile-container'>
         <h2>About Me</h2>
         {error ? (
-          <p>Error: {error}</p>
+          <p>{error}</p>
         ) : userDetails ? (
           <div>
             <p>Username: {userDetails.username}</p>
@@ -163,7 +167,7 @@ function Profile() {
     <BsFillGrid3X3GapFill className='card_icon' />
   </div>
   <h1>05</h1>
-  <button9 type="button" onClick={handleNavigateToManualmes}>Lab</button9>
+  <button9 type="button" onClick={handleNavigateToLab}>Lab</button9>
 </div>
 
 </div>

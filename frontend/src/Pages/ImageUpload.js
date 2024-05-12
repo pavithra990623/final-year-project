@@ -56,7 +56,7 @@ const ImageUpload = () => {
     try {
       setLoading(true);
       // Fetch chart data from the database
-      const response = await axios.get('http://localhost:3001/get-chart-data');
+      const response = await axios.get('http://localhost:3001/chart/get');
       setChartData(response.data);
     } catch (error) {
       console.error('Error fetching chart data:', error);
@@ -70,7 +70,7 @@ const ImageUpload = () => {
     <div>
       <Header />
       <h1>Test Results</h1><br></br>
-      <input type="file" onChange={handleFileChange} />
+      <input type="file" onChange={handleFileChange}/> 
       <button onClick={handleUpload}>Upload</button>
       {ocrResult && (
         <div>
@@ -79,8 +79,9 @@ const ImageUpload = () => {
           <button onClick={handleStoreData}>Store Data in Firebase</button>
         </div>
       )}
-      {loading && <p>Loading...</p>}
+      
       <button onClick={handleViewChart}>View Chart</button>
+      {loading && <p>Loading...</p>}
       {chartData && <ChartComponent chartData={chartData} />}
     </div>
   );

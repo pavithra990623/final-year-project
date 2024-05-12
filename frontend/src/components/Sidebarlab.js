@@ -21,7 +21,7 @@ const Sidebarlab = ({ openSidebarlab }) => {
       <ul className='sidebarl-list'>
         <li className='sidebarl-list-item'>
           <Link to="/Patientlabr">
-            Add Patient Report
+            Add 
           </Link>
         </li>
         <li className='sidebarl-list-item'>

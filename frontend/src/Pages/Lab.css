@@ -1,20 +1,22 @@
 /*Lab.css*/
 
 .lab-container {
-    margin-top: 50px;
-  }
+  width: 70%; /* Adjust the width as needed */
+  margin: 60px auto; /* Centers the container horizontally and adds margin on top */
+}
   
   .lab-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    align-items: center;
   }
   
   .lab-table th,
   .lab-table td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
   }
   
   .lab-table th {
@@ -112,6 +114,12 @@
     background-color: #23c836;
   }
   
+  .h3 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
 /* Media query for responsiveness */
 @media screen and (max-width: 768px) {
   .lab-container form button {
