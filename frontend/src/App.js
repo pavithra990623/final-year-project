@@ -26,6 +26,7 @@ import Lablogin from "./Pages/Lablogin";
 import Manualmes from "./Pages/Manualmes";
 import ChartComponent from "./components/ChartComponent";
 import Doclab from "./Pages/Doclab";
+import Doctorlog from "./Pages/Doctorlog";
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
 
@@ -120,6 +121,9 @@ function App() {
 
               {/*Calender*/}
               <Route path="/Doclab" element={<Doclab/>} />
+
+              {/*Calender*/}
+              <Route path="/Doctorlog" element={<Doctorlog/>} />
 
 
         </Routes>
