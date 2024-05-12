@@ -126,7 +126,7 @@ function Profile() {
     <BsFillGrid3X3GapFill className='card_icon' />
   </div>
   <h1>01</h1>
-  <button9 type="button" onClick={handleNavigateToDetails}>Update Profile</button9>
+  <button9 type="button" onClick={handleNavigateToDetails}>Profile</button9>
 </div>
 
 
@@ -145,7 +145,7 @@ function Profile() {
     <BsFillGrid3X3GapFill className='card_icon' />
   </div>
   <h1>03</h1>
-  <button9 type="button" onClick={handleNavigateToImageUpload}>Veiw My Lab Result</button9>
+  <button9 type="button" onClick={handleNavigateToImageUpload}>Lab Result</button9>
 </div>
 
 <div className='cardprofile4'>

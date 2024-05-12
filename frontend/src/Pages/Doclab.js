@@ -33,7 +33,7 @@ function Doclab() {
 
     return (
         <div>
-            <Sidebarlab/>
+            
 
             <p>The details of the Patients</p>
             
