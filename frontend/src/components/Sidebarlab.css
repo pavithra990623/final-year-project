@@ -4,8 +4,8 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 200px; /* Adjust width as needed */
-    background-color: rgba(32, 160, 216, 0.7); /* Example background color with 70% opacity */
+    width: 140px; /* Adjust width as needed */
+    background-color: #0471a7; /* Example background color with 70% opacity */
     color: #fff; /* Example text color */
 }
 

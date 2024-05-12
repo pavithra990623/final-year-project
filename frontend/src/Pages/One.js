@@ -7,7 +7,7 @@ function One() {
   return (
     <div>
       <Header />
-      <h1 style={{ textAlign: 'center' }}>Get Started</h1>
+      <h1 style={{ textAlign: 'center',  }}>Get Started</h1>
       <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '20px' }}>
         {/* Card for Patient */}
         <div style={{ border: '5px solid #ccc', padding: '20px', borderRadius: '5px', width: '300px', textAlign: 'center', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', transition: 'box-shadow 0.3s ease' }}>

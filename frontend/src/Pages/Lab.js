@@ -51,6 +51,39 @@ const Lab = () => {
       {/* <Header /> */}
       <Sidebarlab />
       <div className="lab-container">
+        
+
+        <h2>Lab Reports</h2>
+        <table className="lab-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Patient Name</th>
+              <th>Report Type</th>
+              <th>Date</th>
+              <th>Image</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {reports.map((report) => (
+              <tr key={report.id}>
+                <td>{report.id}</td>
+                <td>{report.patientName}</td>
+                <td>{report.reportType}</td>
+                <td>{report.date}</td>
+                <td>
+                  {report.imageUrl && <img src={report.imageUrl} alt="Report" style={{ width: '100px', height: 'auto' }} />}
+                </td>
+                <td>
+                  <button1 onClick={() => handleEditReport(report.id)}>Edit</button1> {/* Use handleEditReport function */}
+                  <button2 onClick={() => handleDeleteReport(report.id)}>Delete</button2>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
         <h3>Add New Report </h3>
         <form>
           <label>
@@ -90,36 +123,6 @@ const Lab = () => {
           <button type="button" onClick={handleClick}>Upload</button>
         </form>
 
-        <h2>Lab Reports</h2>
-        <table className="lab-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Patient Name</th>
-              <th>Report Type</th>
-              <th>Date</th>
-              <th>Image</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {reports.map((report) => (
-              <tr key={report.id}>
-                <td>{report.id}</td>
-                <td>{report.patientName}</td>
-                <td>{report.reportType}</td>
-                <td>{report.date}</td>
-                <td>
-                  {report.imageUrl && <img src={report.imageUrl} alt="Report" style={{ width: '100px', height: 'auto' }} />}
-                </td>
-                <td>
-                  <button1 onClick={() => handleEditReport(report.id)}>Edit</button1> {/* Use handleEditReport function */}
-                  <button2 onClick={() => handleDeleteReport(report.id)}>Delete</button2>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
       </div>
       <Footer />
     </div>
