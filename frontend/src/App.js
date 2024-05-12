@@ -27,6 +27,7 @@ import Manualmes from "./Pages/Manualmes";
 import ChartComponent from "./components/ChartComponent";
 import Doclab from "./Pages/Doclab";
 import Doctorlog from "./Pages/Doctorlog";
+import GenChart from "./Pages/GenChart";
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
 
@@ -124,6 +125,9 @@ function App() {
 
               {/*Calender*/}
               <Route path="/Doctorlog" element={<Doctorlog/>} />
+
+              {/*Calender*/}
+              <Route path="/GenChart" element={<GenChart/>} />
 
 
         </Routes>
