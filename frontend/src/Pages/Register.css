@@ -125,12 +125,14 @@ body {
   align-items: center; /* Align items vertically in the center */
 }
 .button-container h3 {
+  align-items: center;
   margin-bottom: 10px; /* Add some spacing below the heading */
   font-size: 18px; /* Adjust the font size of the heading */
   color: #333; /* Set the text color */
 }
 .button-container input[type="file"] {
   margin-bottom: 10px; /* Add some spacing below the file input */
+  align-items: center;
 }
 
 

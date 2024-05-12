@@ -29,19 +29,17 @@ function Doctor() {
   return (
     <div>
       <Header/>
+<br></br>
+      <div className="section-title">
+            <h2>Doctors</h2>
+            <p>Driven by a passion to alleviate great pains, our doctor ensures that patients' needs are met, offering synthetic yet effective solutions. With an unwavering commitment to care, anyone seeking relief can trust in our doctor's expertise. No obstacle deters the pursuit of better health, as our doctor tirelessly works to provide comfort and healing in every medical encounter.</p>
+          </div>
 
       {/* ======= Doctors Section ======= */}
 
       <section id="doctors" className="doctors">
         <div className="container">
-
-          <div className="section-title">
-            <h2>Doctors</h2>
-            <p>Driven by a passion to alleviate great pains, our doctor ensures that patients' needs are met, offering synthetic yet effective solutions. With an unwavering commitment to care, anyone seeking relief can trust in our doctor's expertise. No obstacle deters the pursuit of better health, as our doctor tirelessly works to provide comfort and healing in every medical encounter.</p>
-          </div>
-
-          <div className="row">
-
+          <div className="">
             <div className="col-lg-6">
               <div className="member d-flex align-items-start">
                 <div className="pic"><img src={doctor1} className="img-fluid" alt="" /></div>
@@ -60,7 +58,7 @@ function Doctor() {
                 </div>
               </div>
             </div>
-
+<br></br>
             <div className="col-lg-6 mt-4 mt-lg-0">
               <div className="member d-flex align-items-start">
                 <div className="pic"><img src={doctor2} className="img-fluid" alt="" /></div>
@@ -68,7 +66,7 @@ function Doctor() {
                   <h4>Dr. E. Roberts</h4>
                   <span>Specialization: Pediatrics</span>
                   <p>Experience: Dr. Roberts has dedicated her career to caring for children, drawing from extensive experience working in pediatric hospitals and clinics.
-                     Philosophy: With warm  empathetic approach, she believes in building strong relationships with patients and families, ensuring they feel supported and understood throughout the healthcare journey.</p>
+                     Philosophy: With warm  empathetic approach, believes in building strong relationships with patients and families, ensuring they feel supported and understood throughout the healthcare journey.</p>
                   {/* <button onClick={() => handleBooking("Dr. C. Johnson", "2024-04-23")}>Make Appointment</button> */}
                   <div className="social">
                     <a href=""><i className="ri-twitter-fill"></i></a>
@@ -79,7 +77,7 @@ function Doctor() {
                 </div>
               </div>
             </div>
-
+<br></br>
             <div className="col-lg-6 mt-4">
               <div className="member d-flex align-items-start">
                 <div className="pic"><img src={doctor3} className="img-fluid" alt="" /></div>
@@ -98,7 +96,7 @@ function Doctor() {
                 </div>
               </div>
             </div>
-
+<br></br>
             <div className="col-lg-6 mt-4">
               <div className="member d-flex align-items-start">
                 <div className="pic"><img src={doctor4} className="img-fluid" alt="" /></div>

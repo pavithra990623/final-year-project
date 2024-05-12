@@ -28,6 +28,7 @@ import ChartComponent from "./components/ChartComponent";
 import Doclab from "./Pages/Doclab";
 import Doctorlog from "./Pages/Doctorlog";
 import GenChart from "./Pages/GenChart";
+import DocPro from "./Pages/DocPro";
 // Import your authContext here
 //import {AuthContext} from "./context/AuthContext"
 
@@ -108,26 +109,29 @@ function App() {
            {/*Calender*/}
            <Route path="/Details" element={<Details/>} />
 
-             {/*Calender*/}
-             <Route path="/Edituser" element={<Edituser/>} />
+           {/*Calender*/}
+           <Route path="/Edituser" element={<Edituser/>} />
 
-             {/*Calender*/}
-             <Route path="/Lablogin" element={<Lablogin/>} />
+           {/*Calender*/}
+           <Route path="/Lablogin" element={<Lablogin/>} />
 
-             {/*Calender*/}
+           {/*Calender*/}
              <Route path="/Manualmes" element={<Manualmes/>} />
              
-              {/*Calender*/}
-              <Route path="/ChartComponent" element={<ChartComponent/>} />
+           {/*Calender*/}
+           <Route path="/ChartComponent" element={<ChartComponent/>} />
 
-              {/*Calender*/}
-              <Route path="/Doclab" element={<Doclab/>} />
+           {/*Calender*/}
+           <Route path="/Doclab" element={<Doclab/>} />
 
-              {/*Calender*/}
-              <Route path="/Doctorlog" element={<Doctorlog/>} />
+           {/*Calender*/}
+           <Route path="/Doctorlog" element={<Doctorlog/>} />
 
-              {/*Calender*/}
-              <Route path="/GenChart" element={<GenChart/>} />
+           {/*Calender*/}
+           <Route path="/GenChart" element={<GenChart/>} />
+
+            {/*Calender*/}
+            <Route path="/DocPro" element={<DocPro/>} />
 
 
         </Routes>

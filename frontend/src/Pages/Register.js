@@ -142,11 +142,12 @@ const Register = () => {
             </form> 
             <div className="button-container">
               <button type="button" onClick={handleRegister}>Register</button>
-                <br></br><br></br><br></br>           
-                  <h3>The image of Medical Records; If have any</h3>
+                <br></br><br></br><br></br>  
+
+                  {/* <h3>The image of Medical Records; If have any</h3>
                       <input type="file" onChange={(e) => setImg(e.target.files[0])} />
                   <br></br>
-               <button onClick={handleClick}>Upload</button>
+               <button onClick={handleClick}>Upload</button> */}
                    <br></br>
             </div>
         </div>
