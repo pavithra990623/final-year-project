@@ -22,3 +22,23 @@ If you encounter any issues while using AwesomeApp, try the following troublesho
 - Make sure you have the latest version of Node.js installed.
 - Check your internet connection.
 - Clear your browser's cache and cookies.
+
+Final-Year-Project/
+│
+├── backend\AAmodel/                   
+│   ├── config/        
+│   ├── images/            
+│   └── Testdata/ 
+│   └── app.py/ 
+│   └── simple_ocr.py/
+│
+├── cypress\downloads/                
+├── frontend/                
+│   ├── public/         
+│   └── src/
+├── LICENSE                
+├── package.json           
+├── README.md             
+├── .env.local 
+├── .gitignore             
+          
