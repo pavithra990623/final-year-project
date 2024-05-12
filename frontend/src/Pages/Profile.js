@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill } from 'react-icons/bs';
 import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 import './Profile.css';
+import { Link } from 'react-router-dom';
 
 function Profile() {
   const [userDetails, setUserDetails] = useState(null);
@@ -80,9 +81,9 @@ function Profile() {
     }));
   };
 
-  const handleNavigateToImageUpload = () => {
-    navigate('/imageupload');
-  };
+  // const handleNavigateToImageUpload = () => {
+  //   navigate('/imageupload');
+  // };
 
   const handleNavigateToDetails = () => {
     navigate('/details');
@@ -149,7 +150,10 @@ function Profile() {
     <BsFillGrid3X3GapFill className='card_icon' />
   </div>
   <h1>03</h1>
-  <button9 type="button" onClick={handleNavigateToImageUpload}>Lab Result</button9>
+  <Link to="/GenChart">
+  <button9>Lab Result</button9>
+  </Link>
+  {/* <button9 type="button" onClick={handleNavigateToImageUpload}>Lab Result</button9> */}
 </div>
 
 <div className='cardprofile4'>
