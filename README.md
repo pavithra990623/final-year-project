@@ -11,3 +11,14 @@ to inastall the Medihelp application on the device follow these steps.
 ## Usage
 After installation, you can use AwesomeApp as follows:
   Open the app in your web browser.
+
+## Configuration
+AwMediLab Application can be configured using environment variables. Create a `.env` file in the project root and specify the following variables:
+- `PORT`: Port number for the server (default is 5000)
+- `DATABASE_URL`: UR[L for the database connection](https://console.firebase.google.com/project/login-c057b/firestore/databases/-default-/data/~2FAuth~2F0qZXi728tznuf6Vb7zQJ)
+  
+## Troubleshooting
+If you encounter any issues while using AwesomeApp, try the following troubleshooting steps:
+- Make sure you have the latest version of Node.js installed.
+- Check your internet connection.
+- Clear your browser's cache and cookies.
