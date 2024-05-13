@@ -54,9 +54,11 @@ function Manualmes() {
           ))}
         </tbody>
       </table>
+
+      
       <br></br><br></br><br></br>
       {data.length > 0 && (
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="50%" height={400}>
           <LineChart
             data={data}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
