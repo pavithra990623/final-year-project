@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const DummyLineChart = () => {
   const [displayIndex, setDisplayIndex] = useState(0); // Initialize display index
-  const values = [54.38, 43.17, 44.8, 41.38, 55.68]; // Dummy values
+  const values = [0,54.38, 43.17, 44.8, 41.38, 55.68]; // Dummy values
   const chartRef = useRef(null); // Ref for the chart component
   const [chartLoaded, setChartLoaded] = useState(false); // Flag to indicate whether the chart has loaded
 
@@ -54,7 +54,7 @@ const DummyLineChart = () => {
       <button onClick={handleSaveChart}>Save Chart</button> {/* Add a button to save the chart */}
       <br />
       <br />
-      <div style={{ width: '100%', height: 400 }}>
+      <div style={{ width: '40%', height: 300, }}>
         <ResponsiveContainer>
           <LineChart
             ref={chartRef} // Set the ref for the LineChart component
