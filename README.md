@@ -25,7 +25,7 @@ If you encounter any issues while using AwesomeApp, try the following troublesho
 
 Final-Year-Project/
 │
-├── backend/                           // Backend directory for server-related files
+├── backend/                          // Backend directory for server-related files
 │   ├── AAmodel/                      // Machine Learning models or AI logic
 │   ├── config/                       // Configuration files (e.g., environment, database)
 │   ├── images/                       // Images used by the backend (e.g., for OCR processing)
